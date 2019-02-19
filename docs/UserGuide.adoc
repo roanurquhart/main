@@ -231,11 +231,36 @@ Lists all people that meet the specified filter requirement.
 Format: list [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
 
 Examples:
+
 `list` s/ > 50000     (list all persons with income greater than $50000)
 
 `list` ALL            (list all persons in the consumer list)
 
 `list` o/ Plumber			(list all persons who’s occupation is plumber)
+
+=== Adding a company : `add`
+
+Adds a company to the client list
+
+Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
+
+Examples:
+
+`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
+
+`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
+
+=== Find clients: `find`
+
+Lists all persons deemed capable of affording a specific product based on salary
+
+Format: `find` PRICE
+
+Examples:
+find 100
+find 20
+
+
 
 === Saving the data
 
