@@ -58,7 +58,7 @@ Format: `help`
 
 === Adding a person: `add`
 
-Adds a person to the address book +
+Adds a person to the consumer list. +
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
 
 [TIP]
@@ -71,12 +71,12 @@ Examples:
 
 === Listing all persons : `list`
 
-Shows a list of all persons in the address book. +
+Shows a list of all persons in the consumer list. +
 Format: `list`
 
 === Editing a person : `edit`
 
-Edits an existing person in the address book. +
+Edits an existing person in the consumer list. +
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
 
 ****
@@ -149,7 +149,7 @@ Examples:
 
 * `list` +
 `select 2` +
-Selects the 2nd person in the address book.
+Selects the 2nd person in the consumer list.
 * `find Betsy` +
 `select 1` +
 Selects the 1st person in the results of the `find` command.
