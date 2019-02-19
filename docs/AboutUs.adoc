@@ -37,12 +37,12 @@ Responsibilities: Data
 
 '''
 
-=== Johnny Roe
-image::m133225.jpg[width="150", align="left"]
-{empty}[http://github.com/m133225[github]] [<<johndoe#, portfolio>>]
+=== Jiayu Zhang
+image::zhangjiayu0303.png[width="150", align="left"]
+{empty}[http://github.com/ZhangJiayu0303[github]] [<<johndoe#, portfolio>>]
 
 Role: Developer +
-Responsibilities: Dev Ops + Threading
+Responsibilities: TBD
 
 '''
 
