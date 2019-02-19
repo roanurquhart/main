@@ -257,9 +257,22 @@ Lists all persons deemed capable of affording a specific product based on salary
 Format: `find` PRICE
 
 Examples:
+
 find 100
+
 find 20
 
+=== Find shops: `find`
+
+Lists all stores a person is deemed capable of visiting based on salary and store pricing
+
+Format: find [n/NAME] [s/SALARY]
+
+Examples:
+
+find n/steve smith
+
+find s/25000
 
 
 === Saving the data
