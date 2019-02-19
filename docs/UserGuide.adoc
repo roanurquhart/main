@@ -342,3 +342,5 @@ e.g.`select 2`
 * *History* : `history`
 * *Undo* : `undo`
 * *Redo* : `redo`
+* *group* : `group` GROUPNAME [[n/NAME] [a/ADDRESS]]...
+* *export* : `export` [CLIENTS] [CONSUMERS] [ALL]
