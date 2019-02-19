@@ -227,7 +227,9 @@ Format: `exit`
 === Listing persons by name/salary/occupation/residential area/group : `list`
 
 Lists all people that meet the specified filter requirement.
+
 Format: list [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
+
 Examples:
 `list` s/ > 50000                         	(list all persons with income greater than $50000)
 `list` ALL                                   	(list all persons in the book)
