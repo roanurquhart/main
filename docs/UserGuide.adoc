@@ -1,4 +1,4 @@
-= AddressBook Level 4 - User Guide
+= Marketing Morph - User Guide
 :site-section: UserGuide
 :toc:
 :toc-title:
@@ -14,11 +14,11 @@ ifdef::env-github[]
 endif::[]
 :repoURL: https://github.com/se-edu/addressbook-level4
 
-By: `Team SE-EDU`      Since: `Jun 2016`      Licence: `MIT`
+By: `Sky Walker`      Since: `Feb 2019`      Licence: `NUS`
 
 == Introduction
 
-AddressBook Level 4 (AB4) is for those who *prefer to use a desktop app for managing contacts*. More importantly, AB4 is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB4 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <<Quick Start>> to get started. Enjoy!
+Marketing Morph is for marketers who want to organize consumer data. More importantly, Marketing Morph will allow marketers to use a GUI to keep track of different consumers, maintain client lists, and perform market analysis and research in one simple interface.
 
 == Quick Start
 
