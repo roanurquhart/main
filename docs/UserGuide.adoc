@@ -266,13 +266,46 @@ find 20
 
 Lists all stores a person is deemed capable of visiting based on salary and store pricing
 
-Format: find [n/NAME] [s/SALARY]
+Format: `find` [n/NAME] [s/SALARY]
 
 Examples:
 
-find n/steve smith
+`find` n/steve smith
 
-find s/25000
+`find` s/25000
+
+=== See shortlist: `list`
+
+Lists all persons “starred” (favorites etc.)
+
+Format: `list`
+
+=== Create group: `group`
+
+Creates a group of persons
+
+Format: `group` GROUPNAME [[n/NAME] [a/ADDRESS]]...
+
+Examples:
+
+`group` g1 n/bob a/123 streets n/steve a/456 main n/smith a/111 abc st
+
+`group` winners n/jacob a/1 queen st n/adam a/10 north st
+
+=== Export data as CSV: `export`
+
+Exports the data to a CSV file
+
+Format: `export` [CLIENTS] [CONSUMERS] [ALL]
+
+Examples:
+
+`export` clients
+
+`export` all
+
+
+
 
 
 === Saving the data
