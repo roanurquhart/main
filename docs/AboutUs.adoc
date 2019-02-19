@@ -47,7 +47,7 @@ Responsibilities: Dev Ops + Threading
 '''
 
 === Jitesh Khiani
-image::jkhiani.jpg[width="150", align="left"]
+image::jkhiani.png[width="150", align="left"]
 {empty}[https://github.com/jkhiani[github]] [<<johndoe#, portfolio>>]
 
 Role: Developer +
