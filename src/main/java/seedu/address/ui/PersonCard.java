@@ -38,6 +38,12 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
+    private Label salary;
+    @FXML
+    private Label occupation;
+    @FXML
+    private Label relationship;
+    @FXML
     private FlowPane tags;
 
     public PersonCard(Person person, int displayedIndex) {
@@ -48,6 +54,9 @@ public class PersonCard extends UiPart<Region> {
         phone.setText(person.getPhone().value);
         address.setText(person.getAddress().value);
         email.setText(person.getEmail().value);
+        salary.setText(person.getSalary().value);
+        occupation.setText(person.getOccupation().occu);
+        relationship.setText(person.getRelationship().value);
 
         person.getTags().forEach(tag -> {
             Label tagLabel = new Label(tag.tagName);
