@@ -11,7 +11,7 @@ We are a team based in the http://www.comp.nus.edu.sg[School of Computing, Natio
 
 === Dongzhe Fan
 image::FanDongzhe.jpg[width="150", align="left"]
-{empty}[http://github.com/yijinl[github]] [<<johndoe#, portfolio>>]
+{empty}[http://github.com/yijinl[github]]
 
 Role: Developer +
 Responsibilities: TBD
@@ -20,7 +20,7 @@ Responsibilities: TBD
 
 === Jiayu Zhang
 image::zhangjiayu0303.png[width="150", align="left"]
-{empty}[http://github.com/ZhangJiayu0303[github]] [<<johndoe#, portfolio>>]
+{empty}[http://github.com/ZhangJiayu0303[github]]
 
 Role: Developer +
 Responsibilities: TBD
@@ -29,7 +29,7 @@ Responsibilities: TBD
 
 === Jitesh Khiani
 image::jkhiani.png[width="150", align="left"]
-{empty}[https://github.com/jkhiani[github]] [<<johndoe#, portfolio>>]
+{empty}[https://github.com/jkhiani[github]]
 
 Role: Developer +
 Responsibilities: TBD
@@ -38,7 +38,7 @@ Responsibilities: TBD
 
 === Roan Urquhart
 image::roanurquhart.png[width="150", align="left"]
-{empty}[https://github.com/roanurquhart[github]] [<<johndoe#, portfolio>>]
+{empty}[https://github.com/roanurquhart[github]]
 
 Role: Developer +
 Responsibilities: TBD
