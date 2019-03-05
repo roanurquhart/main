@@ -24,8 +24,8 @@ public class BrowserPanel extends UiPart<Region> {
             requireNonNull(MainApp.class.getResource(FXML_FILE_FOLDER + "default.html"));
 
     //"https://se-edu.github.io/dummy-search-page/?name=";
-    public static final String SEARCH_PAGE_URL = "https://www.google.com.sg/maps/search/";
-    //public static final String SEARCH_PAGE_URL = "https://se-education.org/dummy-search-page/?name=";
+    //public static final String SEARCH_PAGE_URL = "https://www.google.com.sg/maps/search/";
+    public static final String SEARCH_PAGE_URL = "https://se-education.org/dummy-search-page/?name=";
 
     private static final String FXML = "BrowserPanel.fxml";
 
