@@ -1,12 +1,12 @@
 package seedu.address.logic.commands;
 
 
-import seedu.address.commons.core.Messages;
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 
-import static java.util.Objects.requireNonNull;
 
 /**
  * Finds and adds all persons in address book whose name contains any of the argument keywords to a favorites list.
