@@ -32,7 +32,7 @@ image::jkhiani.png[width="150", align="left"]
 {empty}[https://github.com/jkhiani[github]] [<<johndoe#, portfolio>>]
 
 Role: Developer +
-Responsibilities: TBD 
+Responsibilities: TBD
 
 '''
 
