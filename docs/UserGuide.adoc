@@ -274,11 +274,11 @@ Examples:
 
 `find` s/25000
 
-=== See shortlist: `list`
+=== Add to favorite list: `favorite`
 
-Lists all persons “starred” (favorites etc.)
+Adds a person to the  “favorite” list (favorites etc.)
 
-Format: `list`
+Format: `favorite` [NAME]
 
 === Create group: `group`
 
