@@ -14,7 +14,6 @@ endif::[]
 
 * This is a desktop marketing application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface).
 * It is meant to be utilized by a marketing company in order to effectively organize *potential targets* and *potential clients*.
-* It is *written in OOP fashion*.
 
 == Site Map
 
