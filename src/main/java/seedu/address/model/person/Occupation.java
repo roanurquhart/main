@@ -16,9 +16,9 @@ public class Occupation {
      * The first character of the occupation must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String VALIDATION_REGEX = "\\p{Alnum}+";
+    public static final String VALIDATION_REGEX = "[^\\s].*";
 
-    public final String occu;
+    public final String value;
 
     /**
      * Constructs a {@code Occupation}.
@@ -28,7 +28,7 @@ public class Occupation {
     public Occupation(String occupation) {
         requireNonNull(occupation);
         checkArgument(isValidOccupation(occupation), MESSAGE_CONSTRAINTS);
-        occu = occupation;
+        value = occupation;
     }
 
     /**
@@ -41,19 +41,19 @@ public class Occupation {
 
     @Override
     public String toString() {
-        return occu;
+        return value;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Occupation // instanceof handles nulls
-                && occu.equals(((Occupation) other).occu)); // state check
+                && value.equals(((Occupation) other).value)); // state check
     }
 
     @Override
     public int hashCode() {
-        return occu.hashCode();
+        return value.hashCode();
     }
 
 }
