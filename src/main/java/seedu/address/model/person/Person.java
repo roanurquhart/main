@@ -71,9 +71,7 @@ public class Person {
         return address;
     }
 
-    public Salary getSalary() {
-        return salary;
-    }
+    public Salary getSalary() { return salary; }
 
     public Occupation getOccupation() {
         return occupation;
