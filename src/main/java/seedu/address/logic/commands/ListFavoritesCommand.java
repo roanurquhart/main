@@ -5,7 +5,6 @@ import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 public class ListFavoritesCommand extends Command{
 
@@ -15,6 +14,7 @@ public class ListFavoritesCommand extends Command{
     @Override
     public CommandResult execute(Model model, CommandHistory history) {
         requireNonNull(model);
+        System.out.println(model.getFavoritesList());
         return new CommandResult(MESSAGE_SUCCESS);
     }
 }
