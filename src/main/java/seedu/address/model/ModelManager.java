@@ -119,6 +119,12 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public ObservableList<Person> getFavoritesList() {
+        return versionedAddressBook.getFavoritesList();
+    }
+
+
+    @Override
     public void setPerson(Person target, Person editedPerson) {
         requireAllNonNull(target, editedPerson);
 

@@ -91,6 +91,10 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    public ObservableList<Person> getFavoritesList() {
+        return favorites.asUnmodifiableObservableList();
+    }
+
     /**
      * Replaces the given person {@code target} in the list with {@code editedPerson}.
      * {@code target} must exist in the address book.
