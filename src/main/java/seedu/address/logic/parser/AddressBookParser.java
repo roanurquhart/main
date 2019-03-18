@@ -81,6 +81,9 @@ public class AddressBookParser {
         case ListFavoritesCommand.COMMAND_WORD:
             return new ListFavoritesCommand();
 
+        case AddCpnyCommand.COMMAND_WORD:
+            return new AddCpnyCommandParser().parse(arguments);
+
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }

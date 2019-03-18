@@ -16,6 +16,7 @@ import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.Company;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
@@ -27,6 +28,7 @@ public class ModelManager implements Model {
     private final VersionedAddressBook versionedAddressBook;
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
+    private final FilteredList<Company> filteredCompanies;
     private final SimpleObjectProperty<Person> selectedPerson = new SimpleObjectProperty<>();
 
     /**
@@ -42,6 +44,7 @@ public class ModelManager implements Model {
         this.userPrefs = new UserPrefs(userPrefs);
         filteredPersons = new FilteredList<>(versionedAddressBook.getPersonList());
         filteredPersons.addListener(this::ensureSelectedPersonIsValid);
+        filteredCompanies = new FilteredList<>(versionedAddressBook.getCompanyList());
     }
 
     public ModelManager() {
@@ -113,6 +116,18 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public boolean hasCompany(Company company) {
+        requireNonNull(company);
+        return versionedAddressBook.hasCompany(company);
+    }
+
+    @Override
+    public void addCompany(Company company) {
+        versionedAddressBook.addCompany(company);
+        updateFilteredCompanyList(PREDICATE_SHOW_ALL_COMPANIES);
+    }
+
+    @Override
     public void addFavorites(Person person) {
         versionedAddressBook.addFavorites(person);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
@@ -142,10 +157,22 @@ public class ModelManager implements Model {
         return filteredPersons;
     }
 
+
     @Override
     public void updateFilteredPersonList(Predicate<Person> predicate) {
         requireNonNull(predicate);
         filteredPersons.setPredicate(predicate);
+    }
+
+    @Override
+    public ObservableList<Company> getFilteredCompanyList() {
+        return filteredCompanies;
+    }
+
+    @Override
+    public void updateFilteredCompanyList(Predicate<Company> predicate) {
+        requireNonNull(predicate);
+        filteredCompanies.setPredicate(predicate);
     }
 
     //=========== Undo/Redo =================================================================================
