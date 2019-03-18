@@ -43,6 +43,18 @@ public class Person {
         this.tags.addAll(tags);
     }
 
+    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
+        requireAllNonNull(name, phone, email, address, tags);
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.tags.addAll(tags);
+        this.salary = new Salary("1");
+        this.occupation = new Occupation("");
+        this.relationship = new Relationship("");
+    }
+
     public Name getName() {
         return name;
     }
