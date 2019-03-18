@@ -42,7 +42,6 @@ public class FavoriteCommand extends Command {
         model.updateFilteredPersonList(predicate);
         model.addFavorites(model.getFilteredPersonList().get(0));
         model.commitAddressBook();
-        System.out.println(model.getFavoritesList());
         return new CommandResult(
                 String.format(MESSAGE_SUCCESS, model.getFilteredPersonList().get(0).getName()));
     }
