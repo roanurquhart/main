@@ -7,8 +7,8 @@ import java.util.List;
 import javafx.beans.InvalidationListener;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.InvalidationListenerManager;
-import seedu.address.model.person.Person;
 import seedu.address.model.person.Company;
+import seedu.address.model.person.Person;
 import seedu.address.model.person.UniqueCompanyList;
 import seedu.address.model.person.UniquePersonList;
 
@@ -90,8 +90,8 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public boolean hasCompany(Company company) {
         requireNonNull(company);
-        return companies.contains(company)
-;    }
+        return companies.contains(company);
+    }
 
     /**
      * Adds a company to the address book.

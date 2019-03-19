@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.CommandHistory;
-import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 
@@ -23,7 +22,7 @@ public class FavoriteCommand extends Command {
             + "Example: " + COMMAND_WORD
             + " John";
 
-    public static final String MESSAGE_SUCCESS = "New person added: %1$s";
+    public static final String MESSAGE_SUCCESS = "New person added";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the favorite list";
     public static final String MESSAGE_COMPLETE = "Adding to favorite list completed.";
 
@@ -42,9 +41,8 @@ public class FavoriteCommand extends Command {
         model.updateFilteredPersonList(predicate);
         model.addFavorites(model.getFilteredPersonList().get(0));
         model.commitAddressBook();
-        System.out.println(model.getFavoritesList());
         return new CommandResult(
-                String.format(MESSAGE_SUCCESS, model.getFilteredPersonList().get(0).getName()));
+                String.format(MESSAGE_SUCCESS));
     }
 
 
