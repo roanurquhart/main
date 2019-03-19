@@ -15,6 +15,9 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Company;
 
+/**
+ * Adds a company object to the addressbook
+ */
 public class AddCpnyCommand extends Command {
     public static final String COMMAND_WORD = "addcpny";
 
