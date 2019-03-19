@@ -383,6 +383,26 @@ We are using `java.util.logging` package for logging. The `LogsCenter` class is 
 
 Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: `config.json`).
 
+
+=== Three new attributes: Salary, Occupation, Relationship
+==== Current Implementation
+The add Command is modified in this enhancement. Previously, user can only add a person's name, phone number, address and tags to the address book.
+After this enhancement, following attributes are added to the person's information:
+
+* `SALARY`: salary must be a string with more than one digits
+* `OCCUPATION`: occupation can be a string with any characters
+*  `RELATIONSHIP`: relationship must be a string with one word (no blank allowed)
+
+===== How to implement the command
+Users just input:
+add n/NAME p/PHONE e/EMAIL a/ADDRESS s/SALARY o/OCCUPATION r/RELATIONSHIP [t/TAG]
+Example: add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 s/100000o/bankerr/singlet/friends t/owesMoney
+
+
+===== Pros and Cons
+** Pros: Easy to implement, and the add format just follows the previous version
+** Cons: When implementing add Command, Users must add all information except the optional TAG attribute, this makes the command not flexible enough
+
 == Documentation
 
 We use asciidoc for writing documentation.
@@ -872,7 +892,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |Priority |As a ... |I want to ... |So that I can...
 |`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App
 
-|`* * *` |user |add a new person |
+|`* * *` |user |add a new person | name, phone, address, salary, occupation, relationship, tags (optional)
 
 |`* * *` |user |delete a person |remove entries that I no longer need
 
