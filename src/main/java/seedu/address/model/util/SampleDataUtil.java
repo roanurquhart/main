@@ -9,11 +9,11 @@ import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Occupation;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
-import seedu.address.model.person.Salary;
-import seedu.address.model.person.Occupation;
 import seedu.address.model.person.Relationship;
+import seedu.address.model.person.Salary;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -26,14 +26,15 @@ public class SampleDataUtil {
                 new Address("Blk 30 Geylang Street 29, #06-40"), new Salary("15000"), new Occupation("Professor"),
                 new Relationship("single"), getTagSet("friends")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
-                new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new Salary("9000"), new Occupation("Programmer"),
-                    new Relationship("single"), getTagSet("colleagues", "friends")),
+                new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"), new Salary("9000"),
+                    new Occupation("Programmer"), new Relationship("single"),
+                    getTagSet("colleagues", "friends")),
             new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
                 new Address("Blk 11 Ang Mo Kio Street 74, #11-04"), new Salary("3000"), new Occupation("HR"),
                     new Relationship("married"), getTagSet("neighbours")),
             new Person(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
-                new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new Salary("50000"), new Occupation("Excutive Director"),
-                    new Relationship("single"), getTagSet("family")),
+                new Address("Blk 436 Serangoon Gardens Street 26, #16-43"), new Salary("50000"),
+                    new Occupation("Excutive Director"), new Relationship("single"), getTagSet("family")),
             new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
                 new Address("Blk 47 Tampines Street 20, #17-35"), new Salary("20000"), new Occupation("Vice President"),
                     new Relationship("married"), getTagSet("classmates")),
