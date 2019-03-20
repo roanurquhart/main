@@ -21,9 +21,9 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
-import seedu.address.model.person.Salary;
 import seedu.address.model.person.Occupation;
 import seedu.address.model.person.Relationship;
+import seedu.address.model.person.Salary;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -103,11 +103,11 @@ public class EditCommand extends Command {
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Salary updatedSalary = editPersonDescriptor.getSalary().orElse(personToEdit.getSalary());
         Occupation updatedOccupation = editPersonDescriptor.getOccupation().orElse(personToEdit.getOccupation());
-        Relationship updatedRelationship = editPersonDescriptor.getRelationship().orElse(personToEdit.getRelationship());
+        Relationship updateRelationship = editPersonDescriptor.getRelationship().orElse(personToEdit.getRelationship());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedSalary,
-                updatedOccupation, updatedRelationship, updatedTags);
+                updatedOccupation, updateRelationship, updatedTags);
     }
 
     @Override
@@ -198,7 +198,7 @@ public class EditCommand extends Command {
             return Optional.ofNullable(address);
         }
 
-        public void setSalary(Salary Ssalary) {
+        public void setSalary(Salary salary) {
             this.salary = salary;
         }
 
@@ -214,7 +214,9 @@ public class EditCommand extends Command {
             return Optional.ofNullable(occupation);
         }
 
-        public void setRelationship(Relationship relationship) { this.relationship = relationship; }
+        public void setRelationship(Relationship relationship) {
+            this.relationship = relationship;
+        }
 
         public Optional<Relationship> getRelationship() {
             return Optional.ofNullable(relationship);

@@ -15,9 +15,9 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
-import seedu.address.model.person.Salary;
 import seedu.address.model.person.Occupation;
 import seedu.address.model.person.Relationship;
+import seedu.address.model.person.Salary;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -42,9 +42,9 @@ class JsonAdaptedPerson {
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address, @JsonProperty("salary") String salary,
-            @JsonProperty("occupation") String occupation, @JsonProperty("relationship") String relationship,
-            @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
+            @JsonProperty("email") String email, @JsonProperty("address") String address,
+            @JsonProperty("salary") String salary, @JsonProperty("occupation") String occupation,
+            @JsonProperty("relationship") String relationship, @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -125,7 +125,8 @@ class JsonAdaptedPerson {
         final Salary modelSalary = new Salary(salary);
 
         if (occupation == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Occupation.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Occupation.class.getSimpleName()));
         }
         if (!Occupation.isValidOccupation(occupation)) {
             throw new IllegalValueException(Occupation.MESSAGE_CONSTRAINTS);
@@ -133,7 +134,8 @@ class JsonAdaptedPerson {
         final Occupation modelOccupation = new Occupation(occupation);
 
         if (relationship == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Relationship.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Relationship.class.getSimpleName()));
         }
         if (!Relationship.isValidRelationship(relationship)) {
             throw new IllegalValueException(Relationship.MESSAGE_CONSTRAINTS);
@@ -141,7 +143,8 @@ class JsonAdaptedPerson {
         final Relationship modelRelationship = new Relationship(relationship);
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelSalary, modelOccupation, modelRelationship, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelAddress,
+                modelSalary, modelOccupation, modelRelationship, modelTags);
     }
 
 }
