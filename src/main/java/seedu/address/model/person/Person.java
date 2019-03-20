@@ -71,11 +71,17 @@ public class Person {
         return address;
     }
 
-    public Salary getSalary() { return salary; }
+    public Salary getSalary() {
+        return salary;
+    }
 
-    public Occupation getOccupation() { return occupation; }
+    public Occupation getOccupation() {
+        return occupation;
+    }
 
-    public Relationship getRelationship() { return relationship; }
+    public Relationship getRelationship() {
+        return relationship;
+    }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
@@ -96,9 +102,11 @@ public class Person {
 
         return otherPerson != null
                 && otherPerson.getName().equals(getName())
-                && (otherPerson.getPhone().equals(getPhone()) || otherPerson.getEmail().equals(getEmail()) ||
-                otherPerson.getSalary().equals(getSalary()) || otherPerson.getOccupation().equals(getOccupation()) ||
-                otherPerson.getRelationship().equals(getRelationship()));
+                && (otherPerson.getPhone().equals(getPhone())
+                || otherPerson.getEmail().equals(getEmail())
+                || otherPerson.getSalary().equals(getSalary())
+                || otherPerson.getOccupation().equals(getOccupation())
+                || otherPerson.getRelationship().equals(getRelationship()));
     }
 
     /**
