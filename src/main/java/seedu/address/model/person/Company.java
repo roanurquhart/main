@@ -1,13 +1,13 @@
 package seedu.address.model.person;
 
-import seedu.address.model.tag.Tag;
+import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import seedu.address.model.tag.Tag;
 
 /**
  *Represents a Company in the address book.
@@ -71,11 +71,17 @@ public class Company {
         return address;
     }
 
-    public Salary getSalary() { return salary; }
+    public Salary getSalary() {
+        return salary;
+    }
 
-    public Occupation getOccupation() { return occupation; }
+    public Occupation getOccupation() {
+        return occupation;
+    }
 
-    public Relationship getRelationship() { return relationship; }
+    public Relationship getRelationship() {
+        return relationship;
+    }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
@@ -90,15 +96,18 @@ public class Company {
      * This defines a weaker notion of equality between two persons.
      */
     public boolean isSameCompany(Company otherCompany) {
+
         if (otherCompany == this) {
             return true;
         }
 
         return otherCompany != null
                 && otherCompany.getName().equals(getName())
-                && (otherCompany.getPhone().equals(getPhone()) || otherCompany.getEmail().equals(getEmail()) ||
-                otherCompany.getSalary().equals(getSalary()) || otherCompany.getOccupation().equals(getOccupation()) ||
-                otherCompany.getRelationship().equals(getRelationship()));
+                && (otherCompany.getPhone().equals(getPhone())
+                || otherCompany.getEmail().equals(getEmail())
+                || otherCompany.getSalary().equals(getSalary())
+                || otherCompany.getOccupation().equals(getOccupation())
+                || otherCompany.getRelationship().equals(getRelationship()));
     }
 
     /**

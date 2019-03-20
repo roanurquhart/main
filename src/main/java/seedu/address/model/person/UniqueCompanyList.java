@@ -13,9 +13,12 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
- * A person is considered unique by comparing using {@code Person#isSameCompany(Company)}. As such, adding and updating of
- * persons uses Company#isSameCompany(Company) for equality so as to ensure that the person being added or updated is
- * unique in terms of identity in the UniqueCompanyList. However, the removal of a person uses Company#equals(Object) so
+ * A person is considered unique by comparing using {@code Person#isSameCompany(Company)}.
+ * As such, adding and updating of
+ * persons uses Company#isSameCompany(Company) for equality so as to ensure that
+ * the person being added or updated is
+ * unique in terms of identity in the UniqueCompanyList. However, the removal of a
+ * person uses Company#equals(Object) so
  * as to ensure that the person with exactly the same fields will be removed.
  *
  * Supports a minimal set of list operations.
