@@ -1,7 +1,8 @@
 package seedu.address.model.person;
 
-import seedu.address.model.Model;
 import java.util.function.Predicate;
+
+import seedu.address.model.Model;
 
 /**
  * Tests that a {@code Person}'s {@code Name} exists in the favorites list.
