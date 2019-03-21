@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import javafx.beans.property.ReadOnlyProperty;
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.model.person.Company;
 import seedu.address.model.person.Person;
 
 /**
@@ -14,6 +15,7 @@ import seedu.address.model.person.Person;
 public interface Model {
     /** {@code Predicate} that always evaluate to true */
     Predicate<Person> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
+    Predicate<Company> PREDICATE_SHOW_ALL_COMPANIES = unused -> true;
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
@@ -59,6 +61,11 @@ public interface Model {
     boolean hasPerson(Person person);
 
     /**
+     * Returns true if a company with the same identity as {@code person} exists in the address book.
+     */
+    boolean hasCompany(Company company);
+
+    /**
      * Deletes the given person.
      * The person must exist in the address book.
      */
@@ -71,10 +78,18 @@ public interface Model {
     void addPerson(Person person);
 
     /**
+     * Adds the given company.
+     * {@code company} must not already exist in the address book.
+     */
+    void addCompany(Company company);
+
+    /**
      * Adds the given person to the favorites list.
      * @param person
      */
     void addFavorites(Person person);
+
+    ObservableList<Person> getFavoritesList();
 
     /**
      * Replaces the given person {@code target} with {@code editedPerson}.
@@ -91,6 +106,17 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<Person> predicate);
+
+    /**
+     * Returns an unmodifiable view of the filtered person list
+     */
+    public ObservableList<Company> getFilteredCompanyList();
+
+    /**
+     * Updates the filter of the filtered company list to filter by the given {@code predicate}.
+     * @throws NullPointerException if {@code predicate} is null.
+     */
+    public void updateFilteredCompanyList(Predicate<Company> predicate);
 
     /**
      * Returns true if the model has previous address book states to restore.

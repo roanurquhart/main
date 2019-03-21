@@ -7,7 +7,9 @@ import java.util.List;
 import javafx.beans.InvalidationListener;
 import javafx.collections.ObservableList;
 import seedu.address.commons.util.InvalidationListenerManager;
+import seedu.address.model.person.Company;
 import seedu.address.model.person.Person;
+import seedu.address.model.person.UniqueCompanyList;
 import seedu.address.model.person.UniquePersonList;
 
 /**
@@ -18,6 +20,7 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     private final UniquePersonList persons;
     private final UniquePersonList favorites;
+    private final UniqueCompanyList companies;
     private final InvalidationListenerManager invalidationListenerManager = new InvalidationListenerManager();
 
     /*
@@ -30,6 +33,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     {
         persons = new UniquePersonList();
         favorites = new UniquePersonList();
+        companies = new UniqueCompanyList();
     }
 
     public AddressBook() {}
@@ -82,6 +86,23 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Returns true if a company with the same identity as {@code company} exists in the address book.
+     */
+    public boolean hasCompany(Company company) {
+        requireNonNull(company);
+        return companies.contains(company);
+    }
+
+    /**
+     * Adds a company to the address book.
+     * The company must not already exist in the address book.
+     */
+    public void addCompany(Company c) {
+        companies.add(c);
+        indicateModified();
+    }
+
+    /**
      * Adds a person to the favorites list.
      * The person must not already exist in the favorites list.
      * @param p person
@@ -89,6 +110,10 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void addFavorites(Person p) {
         favorites.add(p);
         indicateModified();
+    }
+
+    public ObservableList<Person> getFavoritesList() {
+        return favorites.asUnmodifiableObservableList();
     }
 
     /**
@@ -140,6 +165,11 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public ObservableList<Person> getPersonList() {
         return persons.asUnmodifiableObservableList();
+    }
+
+    @Override
+    public ObservableList<Company> getCompanyList() {
+        return companies.asUnmodifiableObservableList();
     }
 
     @Override

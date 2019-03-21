@@ -22,7 +22,7 @@ public class FavoriteCommand extends Command {
             + "Example: " + COMMAND_WORD
             + " John";
 
-    public static final String MESSAGE_SUCCESS = "New person added: %1$s";
+    public static final String MESSAGE_SUCCESS = "New person added";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the favorite list";
     public static final String MESSAGE_COMPLETE = "Adding to favorite list completed.";
 
@@ -42,7 +42,7 @@ public class FavoriteCommand extends Command {
         model.addFavorites(model.getFilteredPersonList().get(0));
         model.commitAddressBook();
         return new CommandResult(
-                String.format(MESSAGE_SUCCESS, model.getFilteredPersonList().get(0).getName()));
+                String.format(MESSAGE_SUCCESS));
     }
 
 
