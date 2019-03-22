@@ -193,7 +193,7 @@ public class EditCommandParserTest {
         userInput = targetIndex.getOneBased() + SALARY_DESC_AMY;
         descriptor = new EditPersonDescriptorBuilder().withSalary(VALID_SALARY_AMY).build();
         expectedCommand = new EditCommand(targetIndex, descriptor);
-        // assertParseSuccess(parser, userInput, expectedCommand);
+        assertParseSuccess(parser, userInput, expectedCommand);
 
         // occupation
         userInput = targetIndex.getOneBased() + OCCUPATION_DESC_AMY;
