@@ -92,6 +92,18 @@ public class PersonTest {
         editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
+        // different salary -> returns false
+        editedAlice = new PersonBuilder(ALICE).withSalary(VALID_SALARY_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
+        // different occupation -> returns false
+        editedAlice = new PersonBuilder(ALICE).withOccupation(VALID_OCCUPATION_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
+        // different relationship -> returns false
+        editedAlice = new PersonBuilder(ALICE).withRelationship(VALID_RELATIONSHIP_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
         // different tags -> returns false
         editedAlice = new PersonBuilder(ALICE).withTags(VALID_TAG_HUSBAND).build();
         assertFalse(ALICE.equals(editedAlice));
