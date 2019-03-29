@@ -7,6 +7,7 @@ import java.util.Arrays;
 import seedu.address.logic.commands.FavoriteCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.person.NameMatchesPredicate;
 
 /**
  * Parses Favorite Command
@@ -27,7 +28,7 @@ public class FavoriteCommandParser {
 
         String[] nameKeywords = trimmedArgs.split("\\s+");
 
-        return new FavoriteCommand(new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+        return new FavoriteCommand(new NameMatchesPredicate(Arrays.asList(nameKeywords)));
     }
 
 
