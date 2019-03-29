@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.person.NameMatchesPredicate;
 
 
 /**
@@ -24,12 +24,12 @@ public class FavoriteCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "New person added";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the favorite list";
-    public static final String MESSAGE_COMPLETE = "Adding to favorite list completed.";
+    public static final String MESSAGE_NOT_SPECIFIC = "Please be more specific";
 
 
-    private final NameContainsKeywordsPredicate predicate;
+    private final NameMatchesPredicate predicate;
 
-    public FavoriteCommand(NameContainsKeywordsPredicate predicate) {
+    public FavoriteCommand(NameMatchesPredicate predicate) {
         this.predicate = predicate;
     }
 
@@ -39,10 +39,15 @@ public class FavoriteCommand extends Command {
     public CommandResult execute(Model model, CommandHistory history) {
         requireNonNull(model);
         model.updateFilteredPersonList(predicate);
-        model.addFavorites(model.getFilteredPersonList().get(0));
-        model.commitAddressBook();
-        return new CommandResult(
-                String.format(MESSAGE_SUCCESS));
+
+        if (model.getFilteredPersonList().size() != 1) {
+            return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
+        }
+        else {
+            model.addFavorites(model.getFilteredPersonList().get(0));
+            model.commitAddressBook();
+            return new CommandResult(String.format(MESSAGE_SUCCESS));
+        }
     }
 
 
