@@ -42,8 +42,7 @@ public class FavoriteCommand extends Command {
 
         if (model.getFilteredPersonList().size() != 1) {
             return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
-        }
-        else {
+        } else {
             model.addFavorites(model.getFilteredPersonList().get(0));
             model.commitAddressBook();
             return new CommandResult(String.format(MESSAGE_SUCCESS));
