@@ -12,7 +12,7 @@ public class NameMatchesPredicate implements Predicate<Person> {
     private final String name;
 
     public NameMatchesPredicate(List<String> keywords) {
-        if (keywords.size() == 0){
+        if (keywords.size() == 0) {
             name = "";
         } else if (keywords.size() == 1) {
             name = keywords.get(0);
