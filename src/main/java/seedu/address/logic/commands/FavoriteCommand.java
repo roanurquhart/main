@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
+import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.NameMatchesPredicate;
 
 
@@ -28,9 +29,11 @@ public class FavoriteCommand extends Command {
 
 
     private final NameMatchesPredicate predicate;
+    private final NameContainsKeywordsPredicate containsPredicate;
 
-    public FavoriteCommand(NameMatchesPredicate predicate) {
+    public FavoriteCommand(NameMatchesPredicate predicate, NameContainsKeywordsPredicate containsPredicate) {
         this.predicate = predicate;
+        this.containsPredicate = containsPredicate;
     }
 
 
@@ -41,6 +44,7 @@ public class FavoriteCommand extends Command {
         model.updateFilteredPersonList(predicate);
 
         if (model.getFilteredPersonList().size() != 1) {
+            model.updateFilteredPersonList(containsPredicate);
             return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
         } else {
             model.addFavorites(model.getFilteredPersonList().get(0));
