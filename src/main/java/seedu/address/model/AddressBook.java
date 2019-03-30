@@ -112,6 +112,16 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    /**
+     * Removes a person from the favorites list.
+     * The person must already exist in the favorites list.
+     * @param p person
+     */
+    public void removeFavorite(Person p) {
+        favorites.remove(p);
+        indicateModified();
+    }
+
     public ObservableList<Person> getFavoritesList() {
         return favorites.asUnmodifiableObservableList();
     }

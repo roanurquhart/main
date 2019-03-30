@@ -89,6 +89,12 @@ public interface Model {
      */
     void addFavorites(Person person);
 
+    /**
+     * Removes the given person from the favorites list.
+     * @param person
+     */
+    void removeFavorite(Person person);
+
     ObservableList<Person> getFavoritesList();
 
     /**
