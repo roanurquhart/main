@@ -1,6 +1,7 @@
 package seedu.address.logic.commands;
 
 import seedu.address.logic.CommandHistory;
+import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.NameMatchesPredicate;
@@ -17,9 +18,9 @@ public class DelFavoriteCommand extends Command {
             + " Alex Yeoh";
 
     public static final String MESSAGE_SUCCESS = "Person deleted";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person doesn't exist in the favorite list";
+    public static final String MESSAGE_NOT_EXIST = "This person doesn't exist";
     public static final String MESSAGE_NOT_SPECIFIC = "Please be more specific";
-
+    public static final String MESSAGE_NOT_FAVORITE = "This person doesn't exist in the favorite list";
 
     private final NameMatchesPredicate predicate;
     private final NameContainsKeywordsPredicate containsPredicate;
@@ -32,13 +33,17 @@ public class DelFavoriteCommand extends Command {
 
 
     @Override
-    public CommandResult execute(Model model, CommandHistory history) {
+    public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
         model.updateFilteredPersonList(predicate);
 
-        if (model.getFilteredPersonList().size() != 1) {
+        if (model.getFilteredPersonList().size() == 0){
+            throw new CommandException(MESSAGE_NOT_EXIST);
+        } else if (model.getFilteredPersonList().size() != 1) {
             model.updateFilteredPersonList(containsPredicate);
             return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
+        } else if (!model.getFavoritesList().contains(model.getFilteredPersonList().get(0))) {
+            throw new CommandException(MESSAGE_NOT_FAVORITE);
         } else {
             model.removeFavorite(model.getFilteredPersonList().get(0));
             model.commitAddressBook();

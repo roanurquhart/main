@@ -116,13 +116,13 @@ public interface Model {
     /**
      * Returns an unmodifiable view of the filtered person list
      */
-    public ObservableList<Company> getFilteredCompanyList();
+    ObservableList<Company> getFilteredCompanyList();
 
     /**
      * Updates the filter of the filtered company list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    public void updateFilteredCompanyList(Predicate<Company> predicate);
+    void updateFilteredCompanyList(Predicate<Company> predicate);
 
     /**
      * Returns true if the model has previous address book states to restore.
