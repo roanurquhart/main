@@ -11,6 +11,7 @@ import seedu.address.logic.commands.AddCpnyCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteCommand;
+import seedu.address.logic.commands.DelFavoriteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FavoriteCommand;
@@ -93,6 +94,9 @@ public class AddressBookParser {
 
         case FavoriteCommand.COMMAND_WORD:
             return new FavoriteCommandParser().parse(arguments);
+
+        case DelFavoriteCommand.COMMAND_WORD:
+            return new DelFavoriteCommandParser().parse(arguments);
 
         case HelpCommand.COMMAND_ALIAS:
             return new HelpCommand();

@@ -134,6 +134,12 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void removeFavorite(Person person) {
+        versionedAddressBook.removeFavorite(person);
+        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+    }
+
+    @Override
     public ObservableList<Person> getFavoritesList() {
         return versionedAddressBook.getFavoritesList();
     }
