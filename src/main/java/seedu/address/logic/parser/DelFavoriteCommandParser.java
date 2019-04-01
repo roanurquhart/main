@@ -1,14 +1,17 @@
 package seedu.address.logic.parser;
 
+import java.util.Arrays;
+
+import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+
 import seedu.address.logic.commands.DelFavoriteCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.NameMatchesPredicate;
 
-import java.util.Arrays;
-
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
+/**
+ * Parses user input for deleting a favorite person.
+ */
 public class DelFavoriteCommandParser {
 
     /**
@@ -25,7 +28,8 @@ public class DelFavoriteCommandParser {
 
         String[] nameKeywords = trimmedArgs.split("\\s+");
 
-        return new DelFavoriteCommand(new NameMatchesPredicate(Arrays.asList(nameKeywords)), new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+        return new DelFavoriteCommand(new NameMatchesPredicate(Arrays.asList(nameKeywords)),
+                new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
     }
 
 }

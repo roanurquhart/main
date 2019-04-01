@@ -50,7 +50,7 @@ public class FavoriteCommand extends Command {
             throw new CommandException(MESSAGE_NOT_EXIST);
         } else if (model.getFavoritesList().contains(model.getFilteredPersonList().get(0))) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
-        } else if (model.getFilteredPersonList().size() != 1){
+        } else if (model.getFilteredPersonList().size() != 1) {
             model.updateFilteredPersonList(containsPredicate);
             return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
         } else {
