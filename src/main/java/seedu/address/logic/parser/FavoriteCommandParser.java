@@ -28,7 +28,8 @@ public class FavoriteCommandParser {
 
         String[] nameKeywords = trimmedArgs.split("\\s+");
 
-        return new FavoriteCommand(new NameMatchesPredicate(Arrays.asList(nameKeywords)), new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+        return new FavoriteCommand(new NameMatchesPredicate(Arrays.asList(nameKeywords)),
+                new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
     }
 
 

@@ -1,13 +1,16 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.NameMatchesPredicate;
 
-import static java.util.Objects.requireNonNull;
-
+/**
+ * Deletes a person from the favorite list
+ */
 public class DelFavoriteCommand extends Command {
 
     public static final String COMMAND_WORD = "delFav";
@@ -37,7 +40,7 @@ public class DelFavoriteCommand extends Command {
         requireNonNull(model);
         model.updateFilteredPersonList(predicate);
 
-        if (model.getFilteredPersonList().size() == 0){
+        if (model.getFilteredPersonList().size() == 0) {
             throw new CommandException(MESSAGE_NOT_EXIST);
         } else if (model.getFilteredPersonList().size() != 1) {
             model.updateFilteredPersonList(containsPredicate);
