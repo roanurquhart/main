@@ -169,13 +169,30 @@ public interface Model {
     ReadOnlyProperty<Person> selectedPersonProperty();
 
     /**
+     * Selected company in the filtered company list.
+     * null if no company is selected.
+     */
+    ReadOnlyProperty<Company> selectedCompanyProperty();
+
+    /**
      * Returns the selected person in the filtered person list.
      * null if no person is selected.
      */
     Person getSelectedPerson();
 
     /**
+     * Returns the selected company in the filtered company list.
+     * null if no company is selected.
+     */
+    Company getSelectedCompany();
+
+    /**
      * Sets the selected person in the filtered person list.
      */
     void setSelectedPerson(Person person);
+
+    /**
+     * Sets the selected company in the filtered company list.
+     */
+    void setSelectedCompany(Company company);
 }
