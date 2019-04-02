@@ -41,6 +41,6 @@ image::roanurquhart.png[width="150", align="left"]
 {empty}[https://github.com/roanurquhart[github]] [<<johndoe#, portfolio>>]
 
 Role: Developer
-Responsibilities: UG/DG maintenance, Company Implementation
+Responsibilities: UG/DG maintenance, GH Rrpo maintenance, Company Implementation
 
 '''
