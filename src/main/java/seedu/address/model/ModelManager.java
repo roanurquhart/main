@@ -156,7 +156,8 @@ public class ModelManager implements Model {
                 return;
             }
 
-            boolean wasSelectedCompanyReplaced = change.wasReplaced() && change.getAddedSize() == change.getRemovedSize()
+            boolean wasSelectedCompanyReplaced = change.wasReplaced() && change.getAddedSize() == change
+                    .getRemovedSize()
                     && change.getRemoved().contains(selectedCompany.getValue());
             if (wasSelectedCompanyReplaced) {
                 // Update selectedCompany to its new value.
