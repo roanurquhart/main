@@ -78,6 +78,12 @@ public interface Model {
     void addPerson(Person person);
 
     /**
+     * Deletes a given company
+     * The person must exist in the address book.
+     */
+    void deleteCompany(Company target);
+
+    /**
      * Adds the given company.
      * {@code company} must not already exist in the address book.
      */
@@ -89,6 +95,12 @@ public interface Model {
      */
     void addFavorites(Person person);
 
+    /**
+     * Removes the given person from the favorites list.
+     * @param person
+     */
+    void removeFavorite(Person person);
+
     ObservableList<Person> getFavoritesList();
 
     /**
@@ -97,6 +109,13 @@ public interface Model {
      * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
      */
     void setPerson(Person target, Person editedPerson);
+
+    /**
+     * Replaces a given company {@code target} with {@code editedCompany}
+     * The company identity of {@code editedCompany} must not be the same as another existing company
+     * in the address book.
+     */
+    void setCompany(Company target, Company editedCompany);
 
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();
@@ -110,13 +129,13 @@ public interface Model {
     /**
      * Returns an unmodifiable view of the filtered person list
      */
-    public ObservableList<Company> getFilteredCompanyList();
+    ObservableList<Company> getFilteredCompanyList();
 
     /**
      * Updates the filter of the filtered company list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    public void updateFilteredCompanyList(Predicate<Company> predicate);
+    void updateFilteredCompanyList(Predicate<Company> predicate);
 
     /**
      * Returns true if the model has previous address book states to restore.
@@ -150,13 +169,30 @@ public interface Model {
     ReadOnlyProperty<Person> selectedPersonProperty();
 
     /**
+     * Selected company in the filtered company list.
+     * null if no company is selected.
+     */
+    ReadOnlyProperty<Company> selectedCompanyProperty();
+
+    /**
      * Returns the selected person in the filtered person list.
      * null if no person is selected.
      */
     Person getSelectedPerson();
 
     /**
+     * Returns the selected company in the filtered company list.
+     * null if no company is selected.
+     */
+    Company getSelectedCompany();
+
+    /**
      * Sets the selected person in the filtered person list.
      */
     void setSelectedPerson(Person person);
+
+    /**
+     * Sets the selected company in the filtered company list.
+     */
+    void setSelectedCompany(Company company);
 }

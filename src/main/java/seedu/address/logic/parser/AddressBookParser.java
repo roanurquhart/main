@@ -64,17 +64,26 @@ public class AddressBookParser {
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
 
+        case EditCpnyCommand.COMMAND_WORD:
+            return new EditCpnyCommandParser().parse(arguments);
+
         case SelectCommand.COMMAND_WORD:
             return new SelectCommandParser().parse(arguments);
 
         case DeleteCommand.COMMAND_WORD:
             return new DeleteCommandParser().parse(arguments);
 
+        case DeleteCpnyCommand.COMMAND_WORD:
+            return new DeleteCpnyCommandParser().parse(arguments);
+
         case ClearCommand.COMMAND_WORD:
             return new ClearCommand();
 
         case FindCommand.COMMAND_WORD:
             return new FindCommandParser().parse(arguments);
+
+        case FindCpnyCommand.COMMAND_WORD:
+            return new FindCpnyCommandParser().parse(arguments);
 
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
@@ -99,6 +108,9 @@ public class AddressBookParser {
 
         case FavoriteCommand.COMMAND_WORD:
             return new FavoriteCommandParser().parse(arguments);
+
+        case DelFavoriteCommand.COMMAND_WORD:
+            return new DelFavoriteCommandParser().parse(arguments);
 
         case HelpCommand.COMMAND_ALIAS:
             return new HelpCommand();

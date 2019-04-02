@@ -112,6 +112,16 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    /**
+     * Removes a person from the favorites list.
+     * The person must already exist in the favorites list.
+     * @param p person
+     */
+    public void removeFavorite(Person p) {
+        favorites.remove(p);
+        indicateModified();
+    }
+
     public ObservableList<Person> getFavoritesList() {
         return favorites.asUnmodifiableObservableList();
     }
@@ -128,12 +138,28 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    public void setCompany(Company target, Company editedCompany) {
+        requireNonNull(editedCompany);
+
+        companies.setCompany(target, editedCompany);
+        indicateModified();
+    }
+
     /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
     public void removePerson(Person key) {
         persons.remove(key);
+        indicateModified();
+    }
+
+    /**
+     * Removes {@code key} from this {@code AddressBook}.
+     * {@code key} must exist in the address book.
+     */
+    public void removeCompany(Company key) {
+        companies.remove(key);
         indicateModified();
     }
 

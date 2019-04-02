@@ -8,33 +8,27 @@ import seedu.address.model.Model;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.NameMatchesPredicate;
 
-
 /**
- * Finds and adds all persons in address book whose name contains any of the argument keywords to a favorites list.
- * Keyword matching is case sensitive.
+ * Deletes a person from the favorite list
  */
-public class FavoriteCommand extends Command {
+public class DelFavoriteCommand extends Command {
 
-    public static final String COMMAND_WORD = "favorite";
+    public static final String COMMAND_WORD = "delFav";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Finds all persons whose names contain\n"
-            + "any of the specified \"\n"
-            + "keywords (case-sensitive) and adds them to a list of favorite contacts.\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Deletes a person from the favorites list\n"
             + "Parameters: KEYWORD [MORE_KEYWORDS]...\n"
             + "Example: " + COMMAND_WORD
-            + " John";
+            + " Alex Yeoh";
 
-    public static final String MESSAGE_SUCCESS = "New person added";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the favorite list";
+    public static final String MESSAGE_SUCCESS = "Person deleted";
+    public static final String MESSAGE_NOT_EXIST = "This person doesn't exist";
     public static final String MESSAGE_NOT_SPECIFIC = "Please be more specific";
-    public static final String MESSAGE_NOT_EXIST = "No person exists with this name";
-
-
+    public static final String MESSAGE_NOT_FAVORITE = "This person doesn't exist in the favorite list";
 
     private final NameMatchesPredicate predicate;
     private final NameContainsKeywordsPredicate containsPredicate;
 
-    public FavoriteCommand(NameMatchesPredicate predicate, NameContainsKeywordsPredicate containsPredicate) {
+    public DelFavoriteCommand(NameMatchesPredicate predicate, NameContainsKeywordsPredicate containsPredicate) {
         this.predicate = predicate;
         this.containsPredicate = containsPredicate;
     }
@@ -47,15 +41,14 @@ public class FavoriteCommand extends Command {
         model.updateFilteredPersonList(predicate);
 
         if (model.getFilteredPersonList().size() == 0) {
-            model.updateFilteredPersonList(containsPredicate);
             throw new CommandException(MESSAGE_NOT_EXIST);
-        } else if (model.getFavoritesList().contains(model.getFilteredPersonList().get(0))) {
-            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } else if (model.getFilteredPersonList().size() != 1) {
             model.updateFilteredPersonList(containsPredicate);
             return new CommandResult(String.format(MESSAGE_NOT_SPECIFIC));
+        } else if (!model.getFavoritesList().contains(model.getFilteredPersonList().get(0))) {
+            throw new CommandException(MESSAGE_NOT_FAVORITE);
         } else {
-            model.addFavorites(model.getFilteredPersonList().get(0));
+            model.removeFavorite(model.getFilteredPersonList().get(0));
             model.commitAddressBook();
             return new CommandResult(String.format(MESSAGE_SUCCESS));
         }
@@ -65,9 +58,7 @@ public class FavoriteCommand extends Command {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof FavoriteCommand // instanceof handles nulls
-                && predicate.equals(((FavoriteCommand) other).predicate)); // state check
+                || (other instanceof DelFavoriteCommand // instanceof handles nulls
+                && predicate.equals(((DelFavoriteCommand) other).predicate)); // state check
     }
-
 }
-
