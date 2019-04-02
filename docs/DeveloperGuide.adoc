@@ -900,17 +900,21 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |user |sort persons by name |locate a person easily
 
-|`* * *` |user |see number of entries in the addressbook | to know how many entries I have
-
 |`* * *` |user |create a group of clients |to organize potential clients into a separate group
 
 |`* * *` |user |add contacts to a favorites list |to have quick access to the most used contacts
+
+|`* * *` |user |delete contacts to a favorites list |to have quick access to the most used contacts
 
 |`* * *` |user |update person or company data |to change information that is no longer correct
 
 |`* *` |user |can analyze which people can afford a product |to effectively target potential consumers
 
 |`* *` |user |can determine which people can shop at particular businesses |to sell information to companies
+
+|`* *` |user |view a persons address on a map |visualize where they live
+
+|`* *` |user |see number of entries in the addressbook | to know how many entries I have
 
 |`*` |user |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident
 |=======================================================================
@@ -947,6 +951,54 @@ Use case ends.
 ** 3a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
+
+[discrete]
+=== Use case: Favorite person
+
+*MSS*
+
+1.  User requests to list persons
+2.  AddressBook shows a list of persons
+3.  User requests to add a specific person in the list to their favorites
+4.  AddressBook saves the person in the favorites list
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The list is empty.
++
+Use case ends.
+
+* 3a. The given name does not exist.
++
+[none]
+** 3a1. AddressBook shows an error message.
++
+* 3b. The given name is not specific enough.
++
+[none]
+** 3b1. AddressBook shows an error message and displays potential options.
++
+* 3c. The given name isn't a favorite.
++
+[none]
+** 3c1. AddressBook shows an error message.
++
+Use case resumes at step 1.
+
+[discrete]
+=== Use case: View person's location
+
+*MSS*
+
+1.  User requests to list persons
+2.  AddressBook shows a list of persons
+3.  User clicks on a specific persons card on the list
+4.  AddressBook displays a Google Maps window of their address in the Main Window
++
+Use case ends.
 
 _{More to be added}_
 
