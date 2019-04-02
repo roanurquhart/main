@@ -128,7 +128,9 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public void deleteCompany(Company target) { versionedAddressBook.removeCompany(target); }
+    public void deleteCompany(Company target) {
+        versionedAddressBook.removeCompany(target);
+    }
 
     @Override
     public void addFavorites(Person person) {
