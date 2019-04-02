@@ -321,7 +321,7 @@ image::UndoRedoActivityDiagram.png[width="650"]
 ** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
 // end::undoredo[]
 
-// tag::dataencryption[]
+// tag::favoriteSystem[]
 === Favorite System
 ==== Current Implementation
 
@@ -361,7 +361,7 @@ image::favoriteActivityDiagram.png[width="650"]
 ** Cons: We must ensure that the implementation is proper as there is a lot of complexity.
 _
 
-// end::dataencryption[]
+// end::favoriteSystem[]
 
 === Logging
 
@@ -952,6 +952,7 @@ Use case ends.
 +
 Use case resumes at step 2.
 
+// tag::jiteshUseCase[]
 [discrete]
 === Use case: Favorite person
 
@@ -999,6 +1000,8 @@ Use case resumes at step 1.
 4.  AddressBook displays a Google Maps window of their address in the Main Window
 +
 Use case ends.
+// end::jiteshUseCase[]
+
 
 _{More to be added}_
 
