@@ -224,19 +224,19 @@ Format: `clear`
 Exits the program. +
 Format: `exit`
 
-=== Listing persons by name/salary/occupation/residential area/group : `list`
+=== Sorting persons by name/salary/occupation/residential area/group : `sort` `[coming in v1.4]`
 
 Lists all people that meet the specified filter requirement.
 
-Format: list [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
+Format: sort [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
 
 Examples:
 
-`list` s/ > 50000     (list all persons with income greater than $50000)
+`sort` s/ > 50000     (list all persons with income greater than $50000)
 
-`list` ALL            (list all persons in the consumer list)
+`sort` ALL            (list all persons in the consumer list)
 
-`list` o/ Plumber			(list all persons who’s occupation is plumber)
+`sort` o/ Plumber			(list all persons who’s occupation is plumber)
 
 === Adding a company : `add`
 
@@ -250,37 +250,49 @@ Examples:
 
 `add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
 
-=== Find clients: `find`
+=== Find clients: `findCli` `[coming in v1.4]`
 
 Lists all persons deemed capable of affording a specific product based on salary
 
-Format: `find` PRICE
+Format: `findCli` PRICE
 
 Examples:
 
-find 100
+findCli 100
 
-find 20
+findCli 20
 
-=== Find shops: `find`
+=== Find shops: `findShops` `[coming in v1.4]`
 
 Lists all stores a person is deemed capable of visiting based on salary and store pricing
 
-Format: `find` [n/NAME] [s/SALARY]
+Format: `findShops` [n/NAME] [s/SALARY]
 
 Examples:
 
-`find` n/steve smith
+`findShops` n/steve smith
 
-`find` s/25000
+`findShops` s/25000
 
 === Add to favorite list: `favorite`
 
-Adds a person to the  “favorite” list (favorites etc.)
+Adds a person to the  “favorite” list
 
 Format: `favorite` [NAME]
 
-=== Create group: `group`
+=== Add to favorite list: `delFav`
+
+Removes a person to the  “favorite” list
+
+Format: `delFav` [NAME]
+
+=== Add to favorite list: `listFav`
+
+Lists all persons in the “favorite” list
+
+Format: `favorite` [NAME]
+
+=== Create group: `group` `[coming in v1.4]`
 
 Creates a group of persons
 
@@ -339,6 +351,9 @@ e.g. `find James Jake`
 * *Help* : `help`
 * *Select* : `select INDEX` +
 e.g.`select 2`
+* *Add Favorite* : `favorite`
+* *Delete Favorite* : `delFav`
+* *List Favorite* : `listFav`
 * *History* : `history`
 * *Undo* : `undo`
 * *Redo* : `redo`
