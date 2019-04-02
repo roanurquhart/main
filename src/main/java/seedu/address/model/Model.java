@@ -78,6 +78,12 @@ public interface Model {
     void addPerson(Person person);
 
     /**
+     * Deletes a given company
+     * The person must exist in the address book.
+     */
+    void deleteCompany(Company target);
+
+    /**
      * Adds the given company.
      * {@code company} must not already exist in the address book.
      */
@@ -103,6 +109,13 @@ public interface Model {
      * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
      */
     void setPerson(Person target, Person editedPerson);
+
+    /**
+     * Replaces a given company {@code target} with {@code editedCompany}
+     * The company identity of {@code editedCompany} must not be the same as another existing company
+     * in the address book.
+     */
+    void setCompany(Company target, Company editedCompany);
 
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();

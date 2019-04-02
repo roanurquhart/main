@@ -128,6 +128,9 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void deleteCompany(Company target) { versionedAddressBook.removeCompany(target); }
+
+    @Override
     public void addFavorites(Person person) {
         versionedAddressBook.addFavorites(person);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
@@ -150,6 +153,13 @@ public class ModelManager implements Model {
         requireAllNonNull(target, editedPerson);
 
         versionedAddressBook.setPerson(target, editedPerson);
+    }
+
+    @Override
+    public void setCompany(Company target, Company editedCompany) {
+        requireAllNonNull(target, editedCompany);
+
+        versionedAddressBook.setCompany(target, editedCompany);
     }
 
     //=========== Filtered Person List Accessors =============================================================
