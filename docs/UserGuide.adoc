@@ -71,16 +71,15 @@ Examples:
 
 === Adding a company : `addcpny`
 
-Adds a company to the client list. +
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
+Adds a company to the client list
 
-[TIP]
-A company can have any number of tags (including 0)
+Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
 
 Examples:
 
-* `addcpny n/Money Inc p/98765432 e/money@example.com a/John street, block 123, #01-01`
-* `addcpny n/Big Money e/bmoney@example.com a/Newgate Rd p/1234567 t/Fortune500`
+`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
+
+`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
 
 === Listing all persons : `list`
 
@@ -316,18 +315,6 @@ Examples:
 `sort` ALL            (list all persons in the consumer list)
 
 `sort` o/ Plumber			(list all persons who’s occupation is plumber)
-
-=== Adding a company : `add`
-
-Adds a company to the client list
-
-Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
-
-Examples:
-
-`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
-
-`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
 
 === Find clients: `findCli` `[coming in v1.4]`
 
