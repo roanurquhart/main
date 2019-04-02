@@ -47,6 +47,7 @@ public class FavoriteCommand extends Command {
         model.updateFilteredPersonList(predicate);
 
         if (model.getFilteredPersonList().size() == 0) {
+            model.updateFilteredPersonList(containsPredicate);
             throw new CommandException(MESSAGE_NOT_EXIST);
         } else if (model.getFavoritesList().contains(model.getFilteredPersonList().get(0))) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
