@@ -56,7 +56,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 
 Format: `help`
 
-=== Adding a person: `add`
+=== Adding a person : `add`
 
 Adds a person to the consumer list. +
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
@@ -69,10 +69,28 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
+=== Adding a company : `addcpny`
+
+Adds a company to the client list. +
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
+
+[TIP]
+A company can have any number of tags (including 0)
+
+Examples:
+
+* `add n/Money Inc p/98765432 e/money@example.com a/John street, block 123, #01-01`
+* `add n/Big Money e/bmoney@example.com a/Newgate Rd p/1234567 t/Fortune500`
+
 === Listing all persons : `list`
 
 Shows a list of all persons in the consumer list. +
 Format: `list`
+
+=== Listing all companies : `listcpny`
+
+Shows a list of all companies in the clients list. +
+Format: `listcpny`
 
 === Editing a person : `edit`
 
