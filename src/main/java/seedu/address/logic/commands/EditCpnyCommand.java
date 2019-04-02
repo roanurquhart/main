@@ -111,7 +111,8 @@ public class EditCpnyCommand extends Command {
         Address updatedAddress = editCompanyDescriptor.getAddress().orElse(companyToEdit.getAddress());
         Salary updatedSalary = editCompanyDescriptor.getSalary().orElse(companyToEdit.getSalary());
         Occupation updatedOccupation = editCompanyDescriptor.getOccupation().orElse(companyToEdit.getOccupation());
-        Relationship updateRelationship = editCompanyDescriptor.getRelationship().orElse(companyToEdit.getRelationship());
+        Relationship updateRelationship = editCompanyDescriptor.getRelationship().orElse(companyToEdit
+                .getRelationship());
         Set<Tag> updatedTags = editCompanyDescriptor.getTags().orElse(companyToEdit.getTags());
 
         return new Company(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedSalary,
