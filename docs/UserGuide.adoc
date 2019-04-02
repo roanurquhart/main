@@ -56,7 +56,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 
 Format: `help`
 
-=== Adding a person: `add`
+=== Adding a person : `add`
 
 Adds a person to the consumer list. +
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
@@ -69,10 +69,27 @@ Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 * `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
+=== Adding a company : `addcpny`
+
+Adds a company to the client list
+
+Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
+
+Examples:
+
+`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
+
+`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
+
 === Listing all persons : `list`
 
 Shows a list of all persons in the consumer list. +
 Format: `list`
+
+=== Listing all companies : `listcpny`
+
+Shows a list of all companies in the clients list. +
+Format: `listcpny`
 
 === Editing a person : `edit`
 
@@ -94,7 +111,27 @@ Edits the phone number and email address of the 1st person to be `91234567` and 
 * `edit 2 n/Betsy Crower t/` +
 Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-=== Locating persons by name: `find`
+=== Editing a company : `editcpny`
+
+Edits an existing company in the client list. +
+Format: `editcpny INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
+
+****
+* Edits the company at the specified `INDEX`. The index refers to the index number shown in the displayed company list. The index *must be a positive integer* 1, 2, 3, ...
+* At least one of the optional fields must be provided.
+* Existing values will be updated to the input values.
+* When editing tags, the existing tags of the company will be removed i.e adding of tags is not cumulative.
+* You can remove all the company's tags by typing `t/` without specifying any tags after it.
+****
+
+Examples:
+
+* `editcpny 1 p/91234567 e/monay@example.com` +
+Edits the phone number and email address of the 1st company to be `91234567` and `monay@example.com` respectively.
+* `editcpny 2 n/Small Money t/` +
+Edits the name of the 2nd company to be `Small Money` and clears all existing tags.
+
+=== Locating persons by name : `find`
 
 Finds persons whose names contain any of the given keywords. +
 Format: `find KEYWORD [MORE_KEYWORDS]`
@@ -114,6 +151,27 @@ Returns `john` and `John Doe`
 * `find Betsy Tim John` +
 Returns any person having names `Betsy`, `Tim`, or `John`
 
+=== Locating companies by name : `findcpny`
+
+Finds companies whose names contain any of the given keywords. +
+Format: `findcpny KEYWORD [MORE_KEYWORDS]`
+
+****
+* The search is case insensitive. e.g `hans` will match `Hans`
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* Only the name is searched.
+* Only full words will be matched e.g. `Han` will not match `Hans`
+* Companiess matching at least one keyword will be returned (i.e. `OR` search). e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+****
+
+Examples:
+
+* `find John` +
+Returns `john` and `John Doe`
+* `find Betsy Tim John` +
+Returns any person having names `Betsy`, `Tim`, or `John`
+
+
 === Deleting a person : `delete`
 
 Deletes the specified person from the address book. +
@@ -122,6 +180,26 @@ Format: `delete INDEX`
 ****
 * Deletes the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
+* The index *must be a positive integer* 1, 2, 3, ...
+****
+
+Examples:
+
+* `list` +
+`delete 2` +
+Deletes the 2nd person in the address book.
+* `find Betsy` +
+`delete 1` +
+Deletes the 1st person in the results of the `find` command.
+
+=== Deleting a company : `deletecpny`
+
+Deletes the specified Company from the address book. +
+Format: `deletecpny INDEX`
+
+****
+* Deletes the company at the specified `INDEX`.
+* The index refers to the index number shown in the displayed company list.
 * The index *must be a positive integer* 1, 2, 3, ...
 ****
 
@@ -238,18 +316,6 @@ Examples:
 
 `sort` o/ Plumber			(list all persons who’s occupation is plumber)
 
-=== Adding a company : `add`
-
-Adds a company to the client list
-
-Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
-
-Examples:
-
-`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
-
-`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
-
 === Find clients: `findCli` `[coming in v1.4]`
 
 Lists all persons deemed capable of affording a specific product based on salary
@@ -262,9 +328,12 @@ findCli 100
 
 findCli 20
 
+
 === Find shops: `findShops` `[coming in v1.4]`
 
+
 Lists all stores a person is deemed capable of visiting based on salary and store pricing
+
 
 Format: `findShops` [n/NAME] [s/SALARY]
 
@@ -274,23 +343,38 @@ Examples:
 
 `findShops` s/25000
 
+// tag::favorite[]
 === Add to favorite list: `favorite`
+
 
 Adds a person to the  “favorite” list
 
 Format: `favorite` [NAME]
 
-=== Add to favorite list: `delFav`
+Examples:
 
-Removes a person to the  “favorite” list
+`favorite` John Doe
+
+`favorite` John (recommends all John's in the addressbook)
+
+=== Delete person from favorite list: `delFav`
+
+Removes a person to the “favorite” list
 
 Format: `delFav` [NAME]
 
-=== Add to favorite list: `listFav`
+Examples:
+
+`delFav` John Doe
+
+`delFav` John (recommends all John's in the favorites list)
+
+=== List the favorite list: `listFav`
 
 Lists all persons in the “favorite” list
 
 Format: `favorite` [NAME]
+// end::favorite[]
 
 === Create group: `group` `[coming in v1.4]`
 
