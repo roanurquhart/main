@@ -138,12 +138,24 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    public void setCompany(Company target, Company editedCompany) {
+        requireNonNull(editedCompany);
+
+        companies.setCompany(target,editedCompany);
+        indicateModified();
+    }
+
     /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
     public void removePerson(Person key) {
         persons.remove(key);
+        indicateModified();
+    }
+
+    public void removeCompany(Company key) {
+        companies.remove(key);
         indicateModified();
     }
 

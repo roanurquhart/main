@@ -32,13 +32,13 @@ public class AddCpnyCommand extends Command {
             + PREFIX_RELATIONSHIP + "RELATIONSHIP"
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_NAME + "Money Inc. "
+            + PREFIX_NAME + "Money Inc "
             + PREFIX_PHONE + "98765432 "
             + PREFIX_EMAIL + "money@example.com "
             + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
-            + PREFIX_SALARY + "100000"
-            + PREFIX_OCCUPATION + "banker"
-            + PREFIX_RELATIONSHIP + "single"
+            + PREFIX_SALARY + "100000 "
+            + PREFIX_OCCUPATION + "banker "
+            + PREFIX_RELATIONSHIP + "single "
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 
