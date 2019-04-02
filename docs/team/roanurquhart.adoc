@@ -1,1 +1,74 @@
-hello
+= Roan Urquhart - Project Portfolio
+:site-section: AboutUs
+:imagesDir: ../images
+:stylesDir: ../stylesheets
+
+== PROJECT: Marketing Morph
+
+---
+
+== Overview
+
+Marketing Morph is a desktop marketing application. It has a GUI but most of the user interactions happen using a CLI (Command Line Interface). It is meant to be utilized by a marketing company in order to effectively organize potential targets and potential clients.
+
+== Summary of contributions
+
+* *Major enhancement*: added *the ability to store and manipulate companies in the Addressbook*
+** How I did it: I created a parallel architecture similar to the Person class and have connected it to the main application.
+** What it does: allows the user to have a list of potential corporate clients, not only potential consumer targets. The user will be able to look at both the companies list and persons list in parallel. The user can analyze the connections between the consumers and the companies with functionality provided by my team member.
+** Justification: This feature improves the product significantly because it increases the organization of the application as well as allowing for useful marketing and business analysis.
+** Highlights: This enhancement affects existing commands and required the addition of many new classes and objects. Due to the dense OOP structure of Addressbook Level 4, I had to carefully trace the functionality of my additions throughout the infrastructure in order to implement the company class in the most effective way. The implementation wasvery challenging because it involved the navigation and creation of many new classes. I also reworked the infrastructure in order to accomodate for my changes
+** Credits: _The prexisting code base was very useful for guiding my implementation of the company feature. It is clear and comprehensive so I would like to thank the original contributers to this AB4. No other outside libraries were used_
+
+* *Minor enhancement*: helped with the implementation of the favorite function that allowed contacts to be saved into a favorites group.
+
+* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+
+* *Other contributions*:
+
+** Project management:
+*** Worked with teammates to diagnose and fix bugs
+** Enhancements to existing features:
+*** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
+*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
+** Documentation:
+*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
+** Community:
+*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
+*** Contributed to forum discussions (examples:  https://github.com[1], https://github.com[2], https://github.com[3], https://github.com[4])
+*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com[1], https://github.com[2], https://github.com[3])
+*** Some parts of the history feature I added was adopted by several other class mates (https://github.com[1], https://github.com[2])
+** Tools:
+*** Integrated a third party library (Natty) to the project (https://github.com[#42])
+*** Integrated a new Github plugin (CircleCI) to the team repo
+
+_{you can add/remove categories in the list above}_
+
+== Contributions to the User Guide
+
+
+|===
+|_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
+|===
+
+include::../UserGuide.adoc[tag=undoredo]
+
+include::../UserGuide.adoc[tag=dataencryption]
+
+== Contributions to the Developer Guide
+
+|===
+|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
+|===
+
+include::../DeveloperGuide.adoc[tag=undoredo]
+
+include::../DeveloperGuide.adoc[tag=dataencryption]
+
+
+== PROJECT: PowerPointLabs
+
+---
+
+_{Optionally, you may include other projects in your portfolio.}_
+
