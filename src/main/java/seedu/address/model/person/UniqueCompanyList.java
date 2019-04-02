@@ -56,7 +56,7 @@ public class UniqueCompanyList implements Iterable<Company> {
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setPerson(Company target, Company editedCompany) {
+    public void setCompany(Company target, Company editedCompany) {
         requireAllNonNull(target, editedCompany);
 
         int index = internalList.indexOf(target);
@@ -75,14 +75,14 @@ public class UniqueCompanyList implements Iterable<Company> {
      * Removes the equivalent person from the list.
      * The person must exist in the list.
      */
-    public void remove(Person toRemove) {
+    public void remove(Company toRemove) {
         requireNonNull(toRemove);
         if (!internalList.remove(toRemove)) {
             throw new PersonNotFoundException();
         }
     }
 
-    public void setPersons(UniqueCompanyList replacement) {
+    public void setCompanies(UniqueCompanyList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -91,7 +91,7 @@ public class UniqueCompanyList implements Iterable<Company> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setPersons(List<Company> companies) {
+    public void setCompanies(List<Company> companies) {
         requireAllNonNull(companies);
         if (!companiesAreUnique(companies)) {
             throw new DuplicatePersonException();
@@ -115,7 +115,7 @@ public class UniqueCompanyList implements Iterable<Company> {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof UniquePersonList // instanceof handles nulls
+                || (other instanceof UniqueCompanyList // instanceof handles nulls
                 && internalList.equals(((UniqueCompanyList) other).internalList));
     }
 
