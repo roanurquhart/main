@@ -274,23 +274,37 @@ Examples:
 
 `findShops` s/25000
 
+// tag::favorite[]
 === Add to favorite list: `favorite`
 
 Adds a person to the  “favorite” list
 
 Format: `favorite` [NAME]
 
-=== Add to favorite list: `delFav`
+Examples:
 
-Removes a person to the  “favorite” list
+`favorite` John Doe
+
+`favorite` John (recommends all John's in the addressbook)
+
+=== Delete person from favorite list: `delFav`
+
+Removes a person to the “favorite” list
 
 Format: `delFav` [NAME]
 
-=== Add to favorite list: `listFav`
+Examples:
+
+`delFav` John Doe
+
+`delFav` John (recommends all John's in the favorites list)
+
+=== List the favorite list: `listFav`
 
 Lists all persons in the “favorite” list
 
 Format: `favorite` [NAME]
+// end::favorite[]
 
 === Create group: `group` `[coming in v1.4]`
 
