@@ -141,7 +141,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void setCompany(Company target, Company editedCompany) {
         requireNonNull(editedCompany);
 
-        companies.setCompany(target,editedCompany);
+        companies.setCompany(target, editedCompany);
         indicateModified();
     }
 
@@ -154,6 +154,10 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    /**
+     * Removes {@code key} from this {@code AddressBook}.
+     * {@code key} must exist in the address book.
+     */
     public void removeCompany(Company key) {
         companies.remove(key);
         indicateModified();
