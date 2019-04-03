@@ -328,9 +328,12 @@ findCli 100
 
 findCli 20
 
+
 === Find shops: `findShops` `[coming in v1.4]`
 
+
 Lists all stores a person is deemed capable of visiting based on salary and store pricing
+
 
 Format: `findShops` [n/NAME] [s/SALARY]
 
@@ -342,6 +345,7 @@ Examples:
 
 // tag::favorite[]
 === Add to favorite list: `favorite`
+
 
 Adds a person to the  “favorite” list
 
