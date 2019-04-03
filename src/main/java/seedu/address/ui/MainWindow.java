@@ -122,11 +122,11 @@ public class MainWindow extends UiPart<Stage> {
                 logic::setSelectedPerson);
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
 
-        /*
+
         companyListPanel = new CompanyListPanel(logic.getFilteredCompanyList(), logic.selectedCompanyProperty(),
                 logic::setSelectedCompany);
         companyListPanelPlaceholder.getChildren().add(companyListPanel.getRoot());
-        */
+
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
