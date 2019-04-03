@@ -42,7 +42,7 @@ public class CommandTestUtil {
     public static final String VALID_OCCUPATION_AMY = "teacher";
     public static final String VALID_OCCUPATION_BOB = "mason";
     public static final String VALID_RELATIONSHIP_AMY = "single";
-    public static final String VALID_RELATIONSHIP_BOB = "single";
+    public static final String VALID_RELATIONSHIP_BOB = "divorced";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
 

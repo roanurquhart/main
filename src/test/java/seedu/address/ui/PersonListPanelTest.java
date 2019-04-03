@@ -86,7 +86,7 @@ public class PersonListPanelTest extends GuiUnitTest {
             Phone phone = new Phone("000");
             Email email = new Email("a@aa");
             Address address = new Address("a");
-            Salary salary = new Salary("100 * i");
+            Salary salary = new Salary(100 * i + "0");
             Occupation occupation = new Occupation("b");
             Relationship relationship = new Relationship("c");
             Person person = new Person(name, phone, email, address, salary, occupation, relationship,
