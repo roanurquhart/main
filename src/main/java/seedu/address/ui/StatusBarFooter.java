@@ -39,12 +39,11 @@ public class StatusBarFooter extends UiPart<Region> {
     private Label numContactsStatus;
 
 
-    public StatusBarFooter(Path saveLocation, ReadOnlyAddressBook addressBook, int numContacts) {
+    public StatusBarFooter(ReadOnlyAddressBook addressBook, int numContacts) {
         super(FXML);
         addressBook.addListener(observable -> updateSyncStatus(addressBook.getPersonList().size()));
         syncStatus.setText(SYNC_STATUS_INITIAL);
         numContactsStatus.setText(String.format(SYNC_STATUS_NUM_CONTACTS, numContacts));
-        saveLocationStatus.setText(Paths.get(".").resolve(saveLocation).toString());
     }
 
     /**
