@@ -73,13 +73,13 @@ Examples:
 
 Adds a company to the client list
 
-Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
+Format: `addcpny` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
 
 Examples:
 
-`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
+`addcpny` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
 
-`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
+`addcpny` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
 
 === Listing all persons : `list`
 
