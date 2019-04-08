@@ -1,11 +1,13 @@
 package seedu.address.logic.commands;
 
-import seedu.address.logic.CommandHistory;
-import seedu.address.model.Model;
-
 import static java.util.Objects.requireNonNull;
 
-public class AverageCommand extends Command{
+import seedu.address.logic.CommandHistory;
+import seedu.address.model.Model;
+/**
+ * Calculates the average of all salaries
+ */
+public class AverageCommand extends Command {
 
     public static final String COMMAND_WORD = "average";
 
@@ -15,7 +17,7 @@ public class AverageCommand extends Command{
     public CommandResult execute(Model model, CommandHistory history) {
         requireNonNull(model);
         int sum = 0;
-        for(int i = 0; i < model.getFilteredPersonList().size(); i++) {
+        for (int i = 0; i < model.getFilteredPersonList().size(); i++) {
             sum += Integer.parseInt(String.valueOf(model.getFilteredPersonList().get(i).getSalary()));
         }
 

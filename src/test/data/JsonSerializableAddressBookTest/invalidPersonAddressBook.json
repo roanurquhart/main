@@ -7,5 +7,7 @@
     "salary": "2000",
     "occupation": "tutor",
     "relationship": "single"
-  } ]
+  } ],
+  "favorites": [],
+  "companies": []
 }

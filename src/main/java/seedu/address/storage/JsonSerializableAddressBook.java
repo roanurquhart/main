@@ -25,14 +25,18 @@ class JsonSerializableAddressBook {
 
     private final List<JsonAdaptedPerson> persons = new ArrayList<>();
     private final List<JsonAdaptedCompany> companies = new ArrayList<>();
+    private final List<JsonAdaptedPerson> favorites = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonSerializableAddressBook} with the given persons.
      */
     @JsonCreator
-    public JsonSerializableAddressBook(@JsonProperty("persons") List<JsonAdaptedPerson> persons, @JsonProperty("companies") List<JsonAdaptedCompany> companies) {
+    public JsonSerializableAddressBook(@JsonProperty("persons") List<JsonAdaptedPerson> persons,
+                                       @JsonProperty("companies") List<JsonAdaptedCompany> companies,
+                                       @JsonProperty("favorites") List<JsonAdaptedPerson> favorites) {
         this.persons.addAll(persons);
         this.companies.addAll(companies);
+        this.favorites.addAll(favorites);
     }
 
     /**
@@ -43,6 +47,7 @@ class JsonSerializableAddressBook {
     public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
         persons.addAll(source.getPersonList().stream().map(JsonAdaptedPerson::new).collect(Collectors.toList()));
         companies.addAll(source.getCompanyList().stream().map(JsonAdaptedCompany::new).collect(Collectors.toList()));
+        favorites.addAll(source.getFavoritesList().stream().map(JsonAdaptedPerson::new).collect(Collectors.toList()));
     }
 
     /**
@@ -65,6 +70,13 @@ class JsonSerializableAddressBook {
                 throw new IllegalValueException(MESSAGE_DUPLICATE_COMPANY);
             }
             addressBook.addCompany(company);
+        }
+        for (JsonAdaptedPerson jsonAdaptedPerson : favorites) {
+            Person person = jsonAdaptedPerson.toModelType();
+            if (addressBook.hasFavorite(person)) {
+                throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
+            }
+            addressBook.addFavorites(person);
         }
         return addressBook;
     }

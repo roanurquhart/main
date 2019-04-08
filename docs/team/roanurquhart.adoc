@@ -29,12 +29,12 @@ Marketing Morph is a desktop marketing application. It has a GUI but most of the
 ** Project management:
 *** Worked with teammates to diagnose and fix bugs
 ** Enhancements to existing features:
-*** 
+***
 ** Documentation:
-*** 
+***
 ** Community:
-*** 
-*** 
+***
+***
 
 == Contributions to the User Guide
 
