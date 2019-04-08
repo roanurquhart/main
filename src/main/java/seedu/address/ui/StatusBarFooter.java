@@ -1,5 +1,7 @@
 package seedu.address.ui;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Clock;
 import java.util.Date;
 
@@ -36,15 +38,18 @@ public class StatusBarFooter extends UiPart<Region> {
     private Label numCompaniesStatus;
     @FXML
     private Label numContactsStatus;
+    @FXML
+    private Label saveLocationStatus;
 
 
-    public StatusBarFooter(ReadOnlyAddressBook addressBook, int numContacts, int numCompanies) {
+    public StatusBarFooter(Path saveLocation, ReadOnlyAddressBook addressBook, int numContacts, int numCompanies) {
         super(FXML);
         addressBook.addListener(observable -> updateSyncStatus(addressBook.getPersonList().size(),
                 addressBook.getCompanyList().size()));
         syncStatus.setText(SYNC_STATUS_INITIAL);
         numContactsStatus.setText(String.format(SYNC_STATUS_NUM_CONTACTS, numContacts));
         numCompaniesStatus.setText(String.format(SYNC_STATUS_NUM_COMPANIES, numCompanies));
+        saveLocationStatus.setText(Paths.get(".").resolve(saveLocation).toString());
     }
 
     /**
