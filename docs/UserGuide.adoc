@@ -69,9 +69,8 @@ Examples:
 * `add n/Jane Doe p/23456789 e/janed@example.com a/113, Clementi Ave 2, #02-24 s/5000 o/teacher r/single`
 * `add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 s/100000 o/banker r/single t/friends t/owesMoney`
 
-tag::addcpny[]
 === Adding a company : `addcpny` 
-
+tag::addcpny[]
 Adds a company to the client list
 
 Format: `addcpny` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
@@ -81,16 +80,16 @@ Examples:
 `addcpny` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
 
 `addcpny` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
-end::addcpny
+end::addcpny[]
 
 === Listing all persons : `list`
 
 Shows a list of all persons in the consumer list. +
 Format: `list`
 
-tag::listcpny[]
-=== Listing all companies : `listcpny`
 
+=== Listing all companies : `listcpny`
+tag::listcpny[]
 Shows a list of all companies in the clients list. +
 Format: `listcpny`
 
@@ -115,9 +114,9 @@ Edits the phone number and email address of the 1st person to be `91234567` and 
 * `edit 2 n/Betsy Crower t/` +
 Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-tag::editcpny[]
-=== Editing a company : `editcpny`
 
+=== Editing a company : `editcpny`
+tag::editcpny[]
 Edits an existing company in the client list. +
 Format: `editcpny INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
 
@@ -157,9 +156,9 @@ Returns `john` and `John Doe`
 * `find Betsy Tim John` +
 Returns any person having names `Betsy`, `Tim`, or `John`
 
-tag::findcpny[]
-=== Locating companies by name : `findcpny`
 
+=== Locating companies by name : `findcpny`
+tag::findcpny[]
 Finds companies whose names contain any of the given keywords. +
 Format: `findcpny KEYWORD [MORE_KEYWORDS]`
 
