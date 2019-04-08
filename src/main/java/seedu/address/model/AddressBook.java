@@ -122,6 +122,9 @@ public class AddressBook implements ReadOnlyAddressBook {
         indicateModified();
     }
 
+    /**
+     * Returns true if a person with the same identity as {@code person} exists in the favorite list.
+     */
     public boolean hasFavorite(Person person) {
         requireNonNull(person);
         return favorites.contains(person);

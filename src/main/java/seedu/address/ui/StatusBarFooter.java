@@ -1,7 +1,5 @@
 package seedu.address.ui;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.Clock;
 import java.util.Date;
 
@@ -17,7 +15,8 @@ public class StatusBarFooter extends UiPart<Region> {
 
     public static final String SYNC_STATUS_INITIAL = "Not updated yet in this session";
     public static final String SYNC_STATUS_UPDATED = "Last Updated: %s";
-    public static final String SYNC_STATUS_NUM_CONTACTS = "Total Contacts: %d";
+    public static final String SYNC_STATUS_NUM_CONTACTS = "Clients: %d";
+    public static final String SYNC_STATUS_NUM_COMPANIES = "Companies: %d";
 
     /**
      * Used to generate time stamps.
@@ -34,16 +33,18 @@ public class StatusBarFooter extends UiPart<Region> {
     @FXML
     private Label syncStatus;
     @FXML
-    private Label saveLocationStatus;
+    private Label numCompaniesStatus;
     @FXML
     private Label numContactsStatus;
 
 
-    public StatusBarFooter(ReadOnlyAddressBook addressBook, int numContacts) {
+    public StatusBarFooter(ReadOnlyAddressBook addressBook, int numContacts, int numCompanies) {
         super(FXML);
-        addressBook.addListener(observable -> updateSyncStatus(addressBook.getPersonList().size()));
+        addressBook.addListener(observable -> updateSyncStatus(addressBook.getPersonList().size(),
+                addressBook.getCompanyList().size()));
         syncStatus.setText(SYNC_STATUS_INITIAL);
         numContactsStatus.setText(String.format(SYNC_STATUS_NUM_CONTACTS, numContacts));
+        numCompaniesStatus.setText(String.format(SYNC_STATUS_NUM_COMPANIES, numCompanies));
     }
 
     /**
@@ -63,11 +64,12 @@ public class StatusBarFooter extends UiPart<Region> {
     /**
      * Updates "last updated" status to the current time.
      */
-    private void updateSyncStatus(int numContacts) {
+    private void updateSyncStatus(int numContacts, int numCompanies) {
         long now = clock.millis();
         String lastUpdated = new Date(now).toString();
         syncStatus.setText(String.format(SYNC_STATUS_UPDATED, lastUpdated));
         numContactsStatus.setText(String.format(SYNC_STATUS_NUM_CONTACTS, numContacts));
+        numCompaniesStatus.setText(String.format(SYNC_STATUS_NUM_COMPANIES, numCompanies));
     }
 
 }
