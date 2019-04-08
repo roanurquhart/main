@@ -1,10 +1,13 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
+
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 
-import static java.util.Objects.requireNonNull;
-
+/**
+ * Counts how many persons are in the current filtered list
+ */
 public class CountCommand extends Command {
 
     public static final String COMMAND_WORD = "count";
