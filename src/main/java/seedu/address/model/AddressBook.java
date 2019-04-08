@@ -67,6 +67,15 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Replaces the contents of the person list with {@code persons}.
+     * {@code persons} must not contain duplicate persons.
+     */
+    public void setCompanies(List<Company> companies) {
+        this.companies.setCompanies(companies);
+        indicateModified();
+    }
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
@@ -74,6 +83,7 @@ public class AddressBook implements ReadOnlyAddressBook {
 
         setPersons(newData.getPersonList());
         setFavorites(newData.getFavoritesList());
+        setCompanies(newData.getCompanyList());
     }
 
     //// person-level operations
