@@ -128,13 +128,29 @@ public class AddCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        /**
+         * Deletes a given company
+         * The person must exist in the address book.
+         *
+         * @param target
+         */
+        @Override
+        public void deleteCompany(Company target) {
+            throw new AssertionError("This method should not be called.");
+        }
+
         @Override
         public void addCompany(Company company) {
-
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
         public void addFavorites(Person person) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public void removeFavorite(Person person) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -174,6 +190,11 @@ public class AddCommandTest {
         }
 
         @Override
+        public void setCompany(Company target, Company editedCompany) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
         public ObservableList<Person> getFilteredPersonList() {
             throw new AssertionError("This method should not be called.");
         }
@@ -190,7 +211,7 @@ public class AddCommandTest {
 
         @Override
         public void updateFilteredCompanyList(Predicate<Company> predicate) {
-
+            throw new AssertionError("This method should not be called.");
         }
 
         @Override
@@ -223,13 +244,41 @@ public class AddCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
+        /**
+         * Selected company in the filtered company list.
+         * null if no company is selected.
+         */
+        @Override
+        public ReadOnlyProperty<Company> selectedCompanyProperty() {
+            return null;
+        }
+
         @Override
         public Person getSelectedPerson() {
             throw new AssertionError("This method should not be called.");
         }
 
+        /**
+         * Returns the selected company in the filtered company list.
+         * null if no company is selected.
+         */
+        @Override
+        public Company getSelectedCompany() {
+            return null;
+        }
+
         @Override
         public void setSelectedPerson(Person person) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        /**
+         * Sets the selected company in the filtered company list.
+         *
+         * @param company
+         */
+        @Override
+        public void setSelectedCompany(Company company) {
             throw new AssertionError("This method should not be called.");
         }
     }
