@@ -43,15 +43,15 @@ Marketing Morph is a desktop marketing application. It has a GUI but most of the
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=addcpny]
+include::UserGuide.adoc[tag=addcpny]
 
-include::../UserGuide.adoc[tag=listcpny]
+include::UserGuide.adoc[tag=listcpny]
 
-include::../UserGuide.adoc[tag=editcpny]
+include::UserGuide.adoc[tag=editcpny]
 
-include::../UserGuide.adoc[tag=findcpny]
+include::UserGuide.adoc[tag=findcpny]
 
-include::../UserGuide.adoc[tag=deletecpny]
+include::UserGuide.adoc[tag=deletecpny]
 
 == Contributions to the Developer Guide
 
