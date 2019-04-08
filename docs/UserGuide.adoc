@@ -347,7 +347,7 @@ Examples:
 === Add to favorite list: `favorite`
 
 
-Adds a person to the  “favorite” list
+Adds a person to the “favorite” list, the full name must be specified in order for an addition to occur
 
 Format: `favorite` [NAME]
 
@@ -355,7 +355,7 @@ Examples:
 
 `favorite` John Doe
 
-`favorite` John (recommends all John's in the addressbook)
+`favorite` John (recommends all John's in the addressbook, adds none)
 
 === Delete person from favorite list: `delFav`
 
