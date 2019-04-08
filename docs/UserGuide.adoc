@@ -73,7 +73,7 @@ Examples:
 
 Adds a company to the client list
 
-Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
+Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
 
 Examples:
 
