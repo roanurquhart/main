@@ -12,4 +12,5 @@
   <Label fx:id="syncStatus" />
   <Label fx:id="numCompaniesStatus" GridPane.columnIndex="1" />
   <Label fx:id="numContactsStatus" GridPane.columnIndex="2" />
+  <Label fx:id="saveLocationStatus" GridPane.columnIndex="3" />
 </GridPane>
