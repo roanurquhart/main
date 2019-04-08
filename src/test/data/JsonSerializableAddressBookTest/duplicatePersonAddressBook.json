@@ -16,5 +16,7 @@
     "salary": "7000",
     "occupation": "research fellow",
     "relationship": "married"
-  } ]
+  } ],
+  "favorites": [],
+  "companies": []
 }
