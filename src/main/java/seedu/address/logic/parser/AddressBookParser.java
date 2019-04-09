@@ -21,14 +21,17 @@ import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FavoriteCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.FindCpnyCommand;
+import seedu.address.logic.commands.FindminCommand;
+import seedu.address.logic.commands.FindmaxCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.HistoryCommand;
-import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.ListCpnyCommand;
+import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.ListFavoritesCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.logic.commands.UndoCommand;
+import seedu.address.logic.commands.SortPersonCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
 
@@ -86,6 +89,9 @@ public class AddressBookParser {
         case FindCpnyCommand.COMMAND_WORD:
             return new FindCpnyCommandParser().parse(arguments);
 
+        case SortPersonCommand.COMMAND_WORD:
+            return new SortPersonCommandParser().parse(arguments);
+
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
 
@@ -127,6 +133,12 @@ public class AddressBookParser {
 
         case AverageCommand.COMMAND_WORD:
             return new AverageCommand();
+
+        case FindminCommand.COMMAND_WORD:
+            return new FindminCommand();
+
+        case FindmaxCommand.COMMAND_WORD:
+            return new FindmaxCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
