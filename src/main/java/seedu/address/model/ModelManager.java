@@ -30,6 +30,7 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
     private final FilteredList<Company> filteredCompanies;
+    private final FilteredList<Person> filteredFavorites;
     private final SimpleObjectProperty<Person> selectedPerson = new SimpleObjectProperty<>();
     private final SimpleObjectProperty<Company> selectedCompany = new SimpleObjectProperty<>();
 
@@ -47,6 +48,8 @@ public class ModelManager implements Model {
         filteredPersons = new FilteredList<>(versionedAddressBook.getPersonList());
         filteredPersons.addListener(this::ensureSelectedPersonIsValid);
         filteredCompanies = new FilteredList<>(versionedAddressBook.getCompanyList());
+        filteredFavorites = new FilteredList<>(versionedAddressBook.getFavoritesList());
+        filteredFavorites.addListener(this::ensureSelectedPersonIsValid);
     }
 
     public ModelManager() {

@@ -59,12 +59,32 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Replaces the contents of the person list with {@code persons}.
+     * {@code persons} must not contain duplicate persons.
+     */
+    public void setFavorites(List<Person> persons) {
+        this.favorites.setPersons(persons);
+        indicateModified();
+    }
+
+    /**
+     * Replaces the contents of the person list with {@code persons}.
+     * {@code persons} must not contain duplicate persons.
+     */
+    public void setCompanies(List<Company> companies) {
+        this.companies.setCompanies(companies);
+        indicateModified();
+    }
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
         setPersons(newData.getPersonList());
+        setFavorites(newData.getFavoritesList());
+        setCompanies(newData.getCompanyList());
     }
 
     //// person-level operations
@@ -101,6 +121,14 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void addCompany(Company c) {
         companies.add(c);
         indicateModified();
+    }
+
+    /**
+     * Returns true if a person with the same identity as {@code person} exists in the favorite list.
+     */
+    public boolean hasFavorite(Person person) {
+        requireNonNull(person);
+        return favorites.contains(person);
     }
 
     /**
