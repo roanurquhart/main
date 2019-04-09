@@ -69,28 +69,31 @@ Examples:
 * `add n/Jane Doe p/23456789 e/janed@example.com a/113, Clementi Ave 2, #02-24 s/5000 o/teacher r/single`
 * `add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 s/100000 o/banker r/single t/friends t/owesMoney`
 
-=== Adding a company : `addcpny`
-
+=== Adding a company : `addcpny` 
+tag::addcpny[]
 Adds a company to the client list
 
-Format: `add` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
+Format: `addcpny` n/NAME p/NUMBER e/AVG$$ a/ADDRESS s/SECTOR n/#EMPS r/REVENUES [t/TAG]…
 
 Examples:
 
-`add` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
+`addcpny` n/Walmart p/98765432 e/low a/John street, block 123, #01-01  s/Retail n/500
 
-`add` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
+`addcpny` n/Betsy Cakes e/medium a/Bob street, block 232 n p/1234567 s/Bakery n/20 t/popular t/local
+end::addcpny[]
 
 === Listing all persons : `list`
 
 Shows a list of all persons in the consumer list. +
 Format: `list`
 
-=== Listing all companies : `listcpny`
 
+=== Listing all companies : `listcpny`
+tag::listcpny[]
 Shows a list of all companies in the clients list. +
 Format: `listcpny`
 
+end::listcpny[]
 === Editing a person : `edit`
 
 Edits an existing person in the consumer list. +
@@ -111,8 +114,9 @@ Edits the phone number and email address of the 1st person to be `91234567` and 
 * `edit 2 n/Betsy Crower t/` +
 Edits the name of the 2nd person to be `Betsy Crower` and clears all existing tags.
 
-=== Editing a company : `editcpny`
 
+=== Editing a company : `editcpny`
+tag::editcpny[]
 Edits an existing company in the client list. +
 Format: `editcpny INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
 
@@ -130,6 +134,7 @@ Examples:
 Edits the phone number and email address of the 1st company to be `91234567` and `monay@example.com` respectively.
 * `editcpny 2 n/Small Money t/` +
 Edits the name of the 2nd company to be `Small Money` and clears all existing tags.
+end::editcpny[]
 
 === Locating persons by name : `find`
 
@@ -151,8 +156,9 @@ Returns `john` and `John Doe`
 * `find Betsy Tim John` +
 Returns any person having names `Betsy`, `Tim`, or `John`
 
-=== Locating companies by name : `findcpny`
 
+=== Locating companies by name : `findcpny`
+tag::findcpny[]
 Finds companies whose names contain any of the given keywords. +
 Format: `findcpny KEYWORD [MORE_KEYWORDS]`
 
@@ -170,7 +176,7 @@ Examples:
 Returns `john` and `John Doe`
 * `find Betsy Tim John` +
 Returns any person having names `Betsy`, `Tim`, or `John`
-
+end::findcpny[]
 
 === Deleting a person : `delete`
 
@@ -192,6 +198,7 @@ Deletes the 2nd person in the address book.
 `delete 1` +
 Deletes the 1st person in the results of the `find` command.
 
+tag::deletecpny[]
 === Deleting a company : `deletecpny`
 
 Deletes the specified Company from the address book. +
@@ -207,10 +214,11 @@ Examples:
 
 * `list` +
 `delete 2` +
-Deletes the 2nd person in the address book.
+Deletes the 2nd company in the address book.
 * `find Betsy` +
 `delete 1` +
-Deletes the 1st person in the results of the `find` command.
+Deletes the 1st company in the results of the `find` command.
+end::deletecpny[]
 
 === Selecting a person : `select`
 
