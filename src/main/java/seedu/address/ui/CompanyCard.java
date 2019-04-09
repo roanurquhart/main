@@ -51,12 +51,12 @@ public class CompanyCard extends UiPart<Region> {
         this.company = company;
         id.setText(displayedIndex + ". ");
         name.setText(company.getName().fullName);
-        phone.setText(company.getPhone().value);
-        address.setText(company.getAddress().value);
-        email.setText(company.getEmail().value);
-        salary.setText(company.getSalary().value);
-        occupation.setText(company.getOccupation().value);
-        relationship.setText(company.getRelationship().value);
+        phone.setText("Phone: "+company.getPhone().value);
+        address.setText("Address: "+company.getAddress().value);
+        email.setText("Email: "+company.getEmail().value);
+        salary.setText("Revenue: "+company.getSalary().value);
+        occupation.setText("Sector: "+company.getOccupation().value);
+        relationship.setText("Structure: "+company.getRelationship().value);
 
         company.getTags().forEach(tag -> {
             Label tagLabel = new Label(tag.tagName);
