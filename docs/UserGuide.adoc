@@ -310,19 +310,18 @@ Format: `clear`
 Exits the program. +
 Format: `exit`
 
-=== Sorting persons by name/salary/occupation/residential area/group : `sort` `[coming in v1.4]`
+=== Sorting persons by name/salary/occupation/residential area/group : `sort`
 
-Lists all people that meet the specified filter requirement.
+Lists all people that meet the specified filter requirement(in sequence/reverse order).
 
-Format: sort [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
+Format: sortper name/salary/phone/email/occupation/address/relationship seq/rev
 
 Examples:
 
-`sort` s/ > 50000     (list all persons with income greater than $50000)
+`sortper` salary seq     (list all persons by salary in sequence order)
 
-`sort` ALL            (list all persons in the consumer list)
+`sort` phone rev            (list all persons by their phone number in reverse order)
 
-`sort` o/ Plumber			(list all persons who’s occupation is plumber)
 
 === Find clients: `findCli` `[coming in v1.4]`
 
