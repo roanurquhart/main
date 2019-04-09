@@ -49,9 +49,9 @@ public class EditCpnyCommand extends Command {
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
-            + "[" + PREFIX_SALARY + "SALARY] "
-            + "[" + PREFIX_OCCUPATION + "OCCUPATION] "
-            + "[" + PREFIX_RELATIONSHIP + "RELATIONSHIP] "
+            + "[" + PREFIX_SALARY + "REVENUE] "
+            + "[" + PREFIX_OCCUPATION + "SECTOR] "
+            + "[" + PREFIX_RELATIONSHIP + "STRUCTURE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -82,7 +82,7 @@ public class EditCpnyCommand extends Command {
         List<Company> lastShownList = model.getFilteredCompanyList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_COMPANY_DISPLAYED_INDEX);
         }
 
         Company companyToEdit = lastShownList.get(index.getZeroBased());
