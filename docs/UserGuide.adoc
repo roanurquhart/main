@@ -75,6 +75,11 @@ Adds a company to the client list
 
 Format: `addcpny` n/NAME p/NUMBER e/EMAIL a/ADDRESS s/REVENUE o/SECTOR r/STRUCTURE [t/TAG]…
 
+Explanation:
+`REVENUE` represents a company's yearly revenue.
+`SECTOR` represents the type of company i.e. Food, Retail, Bank.
+`STRUCTURE` distinguishes the organization of the company i.e. Conglomerate, Local, International, Private, Public, etc.
+
 Examples:
 
 `addcpny` n/Walmart p/98765432 e/walmart@gmail.com a/John street, block 123, #01-01  s/234525223 o/Retail r/Corporation
