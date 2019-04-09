@@ -2,6 +2,7 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Comparator;
 import java.util.List;
 
 import javafx.beans.InvalidationListener;
@@ -209,4 +210,10 @@ public class AddressBook implements ReadOnlyAddressBook {
     public int hashCode() {
         return persons.hashCode();
     }
+
+    public void sortPersons(Comparator<Person> comPer , String sequence)
+    {
+        persons.SortList(comPer,sequence);
+    }
+
 }
