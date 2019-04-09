@@ -69,7 +69,7 @@ Examples:
 * `add n/Jane Doe p/23456789 e/janed@example.com a/113, Clementi Ave 2, #02-24 s/5000 o/teacher r/single`
 * `add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 s/100000 o/banker r/single t/friends t/owesMoney`
 
-=== Adding a company : `addcpny` 
+=== Adding a company : `addcpny`
 
 Adds a company to the client list
 
