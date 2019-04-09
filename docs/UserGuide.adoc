@@ -320,7 +320,7 @@ Examples:
 
 `sortper` salary seq     (list all persons by salary in sequence order)
 
-`sort` phone rev            (list all persons by their phone number in reverse order)
+`sortper` phone rev            (list all persons by their phone number in reverse order)
 
 
 === Find clients: `findCli` `[coming in v1.4]`
