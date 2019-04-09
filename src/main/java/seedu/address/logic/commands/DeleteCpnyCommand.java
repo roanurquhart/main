@@ -12,18 +12,18 @@ import seedu.address.model.Model;
 import seedu.address.model.person.Company;
 
 /**
- * Deletes a person identified using it's displayed index from the address book.
+ * Deletes a company identified using it's displayed index from the address book.
  */
 public class DeleteCpnyCommand extends Command {
 
     public static final String COMMAND_WORD = "deletecpny";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Deletes the person identified by the index number used in the displayed person list.\n"
+            + ": Deletes the company identified by the index number used in the displayed company list.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_DELETE_PERSON_SUCCESS = "Deleted Person: %1$s";
+    public static final String MESSAGE_DELETE_COMPANY_SUCCESS = "Deleted Company: %1$s";
 
     private final Index targetIndexCpny;
 
@@ -37,13 +37,13 @@ public class DeleteCpnyCommand extends Command {
         List<Company> lastShownList = model.getFilteredCompanyList();
 
         if (targetIndexCpny.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_COMPANY_DISPLAYED_INDEX);
         }
 
         Company companyToDelete = lastShownList.get(targetIndexCpny.getZeroBased());
         model.deleteCompany(companyToDelete);
         model.commitAddressBook();
-        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, companyToDelete));
+        return new CommandResult(String.format(MESSAGE_DELETE_COMPANY_SUCCESS, companyToDelete));
     }
 
     @Override

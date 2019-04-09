@@ -27,9 +27,9 @@ public class AddCpnyCommand extends Command {
             + PREFIX_PHONE + "PHONE "
             + PREFIX_EMAIL + "EMAIL "
             + PREFIX_ADDRESS + "ADDRESS "
-            + PREFIX_SALARY + "SALARY"
-            + PREFIX_OCCUPATION + "OCCUPATION"
-            + PREFIX_RELATIONSHIP + "RELATIONSHIP"
+            + PREFIX_SALARY + "REVENUE "
+            + PREFIX_OCCUPATION + "SECTOR "
+            + PREFIX_RELATIONSHIP + "STRUCTURE "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "Money Inc "
@@ -37,10 +37,10 @@ public class AddCpnyCommand extends Command {
             + PREFIX_EMAIL + "money@example.com "
             + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
             + PREFIX_SALARY + "100000 "
-            + PREFIX_OCCUPATION + "banker "
-            + PREFIX_RELATIONSHIP + "single "
-            + PREFIX_TAG + "friends "
-            + PREFIX_TAG + "owesMoney";
+            + PREFIX_OCCUPATION + "bank "
+            + PREFIX_RELATIONSHIP + "conglomerate "
+            + PREFIX_TAG + "corrupt "
+            + PREFIX_TAG + "fraudulent ";
 
     public static final String MESSAGE_SUCCESS = "New company added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This company already exists in the address book";
