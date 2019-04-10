@@ -191,6 +191,7 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 .Interactions Inside the Logic Component for the `delete 1` Command
 image::DeletePersonSdForLogic.png[width="800"]
 
+// tag::modelc[]
 [[Design-Model]]
 === Model component
 
@@ -218,6 +219,7 @@ At the current time, with the commands 'addcpny' and 'listcpny' the user can add
 As a more OOP model, we can store a `Tag` list in `Address Book`, which `Person` can reference. This would allow `Address Book` to only require one `Tag` object per unique `Tag`, instead of each `Person` needing their own `Tag` object. An example of how such a model may look like is given below. +
  +
 image:ModelClassBetterOopDiagram.png[width="800"]
+// end::modelc[]
 
 [[Design-Storage]]
 === Storage component
@@ -880,7 +882,7 @@ See this https://github.com/se-edu/addressbook-level4/pull/599[PR] for the step-
 * is reasonably comfortable using CLI apps
 
 *Value proposition*: manage contacts faster than a typical mouse/GUI driven app
-
+// tag::users[]
 [appendix]
 == User Stories
 
@@ -918,7 +920,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |`*` |user |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident
 |=======================================================================
 
-_{More to be added}_
+// end::users[]
 
 [appendix]
 == Use Cases
