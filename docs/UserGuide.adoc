@@ -69,7 +69,7 @@ Examples:
 * `add n/Jane Doe p/23456789 e/janed@example.com a/113, Clementi Ave 2, #02-24 s/5000 o/teacher r/single`
 * `add n/John Doe p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 s/100000 o/banker r/single t/friends t/owesMoney`
 
-=== Adding a company : `addcpny` 
+=== Adding a company : `addcpny`
 
 Adds a company to the client list
 
@@ -310,19 +310,18 @@ Format: `clear`
 Exits the program. +
 Format: `exit`
 
-=== Sorting persons by name/salary/occupation/residential area/group : `sort` `[coming in v1.4]`
+=== Sorting persons by name/salary/occupation/residential area/group : `sort`
 
-Lists all people that meet the specified filter requirement.
+Lists all people that meet the specified filter requirement(in sequence/reverse order).
 
-Format: sort [ALL] [s/ >N] [s/ <= N] [n/ NAME] [o/ OCCUPATION] [a/ STREET NAME] [GROUPS]
+Format: sortper name/salary/phone/email/occupation/address/relationship seq/rev
 
 Examples:
 
-`sort` s/ > 50000     (list all persons with income greater than $50000)
+`sortper` salary seq     (list all persons by salary in sequence order)
 
-`sort` ALL            (list all persons in the consumer list)
+`sortper` phone rev            (list all persons by their phone number in reverse order)
 
-`sort` o/ Plumber			(list all persons who’s occupation is plumber)
 
 === Find clients: `findCli` `[coming in v1.4]`
 
@@ -354,34 +353,45 @@ Examples:
 // tag::favorite[]
 === Add to favorite list: `favorite`
 
+Adds a person to the “favorite” list
 
-Adds a person to the “favorite” list, the full name must be specified in order for an addition to occur
+****
+* The full name must be specifid
+* If the full name isn't specified it displays a list of potential persons
+* The person must exist as a client and can only be favorited once
+****
 
-Format: `favorite` [NAME]
+Format: `favorite n/NAME`
 
 Examples:
 
-`favorite` John Doe
+* `favorite John Doe`
 
-`favorite` John (recommends all John's in the addressbook, adds none)
+* `favorite John` (recommends all John's in the addressbook, adds none)
 
 === Delete person from favorite list: `delFav`
 
 Removes a person to the “favorite” list
 
-Format: `delFav` [NAME]
+****
+* The full name must be specifid
+* The person must exist as a favorite
+****
+
+Format: `delFav n/NAME`
 
 Examples:
 
-`delFav` John Doe
+* `delFav John Doe`
 
-`delFav` John (recommends all John's in the favorites list)
+* `favorite John Doe` +
+  `delFav John Doe`
 
 === List the favorite list: `listFav`
 
-Lists all persons in the “favorite” list
+Lists all persons in the “favorite” list under the clients panel
 
-Format: `favorite` [NAME]
+Format: `listFav`
 // end::favorite[]
 
 === Create group: `group` `[coming in v1.4]`

@@ -344,10 +344,9 @@ Step 3. The user repeats this a few times, adding a few other persons.
 
 Step 4. The user wants to view all favorites and executes `listFav` to view all favorites. This creates a new `PersonIsFavoritePredicate` which is passed in a model and calls `Model#getFavoritesList` and check if it contains the person. The command class then calls `Model#updateFilteredPersonList` with the predicate to only display all filtered (favorite) persons.
 
-[NOTE]
-We must still implement persistent storage of favorite lists and deleting favorites.
-
 image::favoriteActivityDiagram.png[width="650"]
+
+Favorites are stored in addressbook.json as another entry into the existing dictionary of key-value pairs and follows identical architecture to that of adding/removing persons from the personsList.
 
 ==== Design Considerations
 

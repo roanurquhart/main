@@ -1,6 +1,7 @@
 package seedu.address.model;
 
 import java.nio.file.Path;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 import javafx.beans.property.ReadOnlyProperty;
@@ -195,4 +196,9 @@ public interface Model {
      * Sets the selected company in the filtered company list.
      */
     void setSelectedCompany(Company company);
+
+    /**
+     * Sort person by specific parameter.
+     */
+    void sortPerson(Comparator comPerson, String sequence);
 }
