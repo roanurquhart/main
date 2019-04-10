@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 import org.junit.Rule;
@@ -279,6 +280,17 @@ public class AddCommandTest {
          */
         @Override
         public void setSelectedCompany(Company company) {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        /**
+         * Sort person by specific parameter.
+         *
+         * @param comPerson
+         * @param sequence
+         */
+        @Override
+        public void sortPerson(Comparator comPerson, String sequence) {
             throw new AssertionError("This method should not be called.");
         }
     }
