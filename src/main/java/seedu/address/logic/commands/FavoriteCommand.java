@@ -35,6 +35,8 @@ public class FavoriteCommand extends Command {
     private final NameContainsKeywordsPredicate containsPredicate;
 
     public FavoriteCommand(NameMatchesPredicate predicate, NameContainsKeywordsPredicate containsPredicate) {
+        requireNonNull(predicate);
+        requireNonNull(containsPredicate);
         this.predicate = predicate;
         this.containsPredicate = containsPredicate;
     }
