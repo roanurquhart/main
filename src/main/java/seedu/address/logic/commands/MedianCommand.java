@@ -5,7 +5,7 @@ import seedu.address.model.Model;
 
 import static java.util.Objects.requireNonNull;
 
-public class MeanCommand extends Command{
+public class MedianCommand extends Command{
 
     public static final String COMMAND_WORD = "mean";
 
