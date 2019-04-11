@@ -1046,6 +1046,8 @@ Cons:
 
 Given below are instructions to test the app manually.
 
+Testing `Company`
+
 [NOTE]
 These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
 
