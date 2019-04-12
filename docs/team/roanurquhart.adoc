@@ -22,7 +22,7 @@ Marketing Morph is a desktop marketing application. It has a GUI but most of the
 
 * *Minor enhancement*: helped with the implementation of the favorite function that allowed contacts to be saved into a favorites group.
 
-* *Code contributed*: _{give links to collated code files}_
+* *Code contributed*: https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=roanurquhart
 
 * *Other contributions*:
 
