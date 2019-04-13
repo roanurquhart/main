@@ -1046,6 +1046,8 @@ Cons:
 
 Given below are instructions to test the app manually.
 
+Testing `Company`
+
 [NOTE]
 These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
 
@@ -1079,10 +1081,41 @@ _{ more test cases ... }_
 
 _{ more test cases ... }_
 
-=== Saving data
+=== Adding a company
 
-. Dealing with missing/corrupted data files
+. Adding a company to the application
 
-.. _{explain how to simulate a missing/corrupted file and the expected behavior}_
+.. Prerequisites: None
+.. Test Case: `addcpny n/Walmart p/98765432 e/walmart@gmail.com a/John street, block 123, #01-01  s/234525223 o/Retail r/Corporation`
 
-_{ more test cases ... }_
+=== List all companies
+
+. Listing companies within the application
+
+.. Prerequisites: There must already be at least one company stored in the application
+.. Test Case: `listcpny`
+
+=== Editing a company
+
+. Editing a company
+
+.. Prerequisites: There must be at least one company stored in the application
+.. Test Case: `editcpny 1 p/91234567 e/monay@example.com` +
+   Expected: edits the first company in the company column
+
+=== Finding a company
+
+. Finding a company
+
+.. Prerequisites: The company that is searched for must exist
+.. Test Case: `find Burger` +
+   Expected: May return `Burger Spot` and `Burger King` if both exist as companies
+
+=== Deleting a company
+
+. Deleting a company while all companies are listed
+
+.. Prerequisites: List all companies using the `listcpny` command.
+.. Test case: `delete 1` +
+   Expected: First company is deleted from the list. Details of the deleted company shown in the status message.
+
