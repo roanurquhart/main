@@ -375,6 +375,9 @@ Examples:
 
 * `favorite John` (recommends all John's in the addressbook, adds none)
 
+image::multipleJohns.png[width="200"]
+
+
 === Delete person from favorite list: `delFav`
 
 Removes a person to the “favorite” list
@@ -395,9 +398,20 @@ Examples:
 
 === List the favorite list: `listFav`
 
-Lists all persons in the “favorite” list under the clients panel
+Lists all persons in the “favorite” list under the clients panel in alphabetical order
 
 Format: `listFav`
+
+Example:
+
+* `favorite John Doe` +
+`favorite Alex Yeoh` +
+`favorite Roy Balakrishnan` +
+`favorite David Li` +
+`listFav`
+
+image::listFav.png[width="400"]
+
 // end::favorite[]
 
 === Create group: `group` `[coming in v1.4]`
