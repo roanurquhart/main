@@ -344,10 +344,17 @@ public class ModelManager implements Model {
 
     @Override
 
-    public void sortPerson(Comparator comPerson , String sequence)
-    {
+    public void sortPerson(Comparator comPerson , String sequence) {
         requireNonNull(comPerson);
-        versionedAddressBook.sortPersons(comPerson,sequence);
+        versionedAddressBook.sortPersons(comPerson, sequence);
+    }
+
+    @Override
+
+    public void sortCompany(Comparator comCompany, String sequence) {
+        requireNonNull(comCompany);
+        versionedAddressBook.sortCompanies(comCompany, sequence);
+
     }
 
 

@@ -201,4 +201,9 @@ public interface Model {
      * Sort person by specific parameter.
      */
     void sortPerson(Comparator comPerson, String sequence);
+
+    /**
+     * Sort company by specific parameter.
+     */
+    void sortCompany(Comparator comCompany, String sequence);
 }

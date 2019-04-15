@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.AddCpnyCommand;
+
 import seedu.address.logic.commands.AverageRevenueCommand;
 import seedu.address.logic.commands.AverageSalaryCommand;
 import seedu.address.logic.commands.ClearCommand;
@@ -37,6 +38,7 @@ import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.SelectCommand;
 import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.commands.SortPersonCommand;
+import seedu.address.logic.commands.SortCompanyCommand;
 import seedu.address.logic.commands.ExportCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 
@@ -97,6 +99,9 @@ public class AddressBookParser {
 
         case SortPersonCommand.COMMAND_WORD:
             return new SortPersonCommandParser().parse(arguments);
+
+        case SortCompanyCommand.COMMAND_WORD:
+            return new SortCompanyCommandParser().parse(arguments);
 
         case ExportCommand.COMMAND_WORD:
             return new ExportCommandParser().parse(arguments);

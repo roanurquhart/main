@@ -7,6 +7,7 @@ import java.util.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import java.util.Comparator;
@@ -136,15 +137,11 @@ public class UniquePersonList implements Iterable<Person> {
         return true;
     }
 
-    public void SortList(Comparator<Person> Comperson, String sequence)
-    {
-        if(sequence.equals("seq"))
-        {
-            System.out.println("1");
-            Collections.sort(this.internalList,Comperson);
+    public void SortList(Comparator<Person> Comperson , String sequence) {
+        if(sequence.equals("seq")) {
+            Collections.sort(this.internalList, Comperson);
         }
-        else if(sequence.equals("rev"))
-        {
+        else if(sequence.equals("rev")) {
             Collections.sort(this.internalList, Collections.reverseOrder(Comperson));
         }
     }

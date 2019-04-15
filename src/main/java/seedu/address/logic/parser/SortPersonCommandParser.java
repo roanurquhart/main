@@ -18,9 +18,9 @@ public class SortPersonCommandParser {
 
         try {
             Comparator<Person> Compare_function = PersonComparator.GetFunction(keywords[0]);
-            return new SortPersonCommand(Compare_function,keywords[0],keywords[1]);
+            return new SortPersonCommand(Compare_function, keywords[0], keywords[1]);
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,SortPersonCommand.MESSAGE_USAGE),pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortPersonCommand.MESSAGE_USAGE),pe);
         }
     }
 
