@@ -1227,6 +1227,8 @@ _{ more test cases ... }_
 .. Test Case: `findSector Bank` +
    Expected: May return `DSS` and `OCCC` if both exist as companies whose sector is bank
 
+// end::manualJiayu[]
+
 === Deleting a company
 
 . Deleting a company while all companies are listed
@@ -1251,6 +1253,5 @@ Testing `Sort Person`
    Expected: Sort the list of clients by their name in sequence order.
 .. Test case: `sortper salary rev`
    Expected: Sort the list of clients by their salary in reverse order.   
-// end::manualJiayu[]
    
    
