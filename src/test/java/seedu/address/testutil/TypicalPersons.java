@@ -101,9 +101,6 @@ public class TypicalPersons {
         }
 
         ab.addFavorites(ALICE);
-        ab.addFavorites(CARL);
-        ab.addFavorites(DANIEL);
-        ab.addFavorites(FIONA);
         return ab;
     }
 
