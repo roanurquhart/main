@@ -915,6 +915,10 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |user |sort persons by name |locate a person easily
 
+|`* * *` |user |sort persons by occupation |locate a cohort of persons easily
+
+|`* * *` |user |sort companies by sector |locate a cohort of companies easily
+
 |`* * *` |user |create a group of clients |to organize potential clients into a separate group
 
 |`* * *` |user |add contacts to a favorites list |to have quick access to the most used contacts
@@ -922,6 +926,10 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |`* * *` |user |delete contacts to a favorites list |to have quick access to the most used contacts
 
 |`* * *` |user |update person or company data |to change information that is no longer correct
+
+|`* * *` |user |analyze salary for all persons |know the average and median salary for all persons
+
+|`* * *` |user |analyze revenue for all companies |know the average and median revenue for all companies
 
 |`* *` |user |can analyze which people can afford a product |to effectively target potential consumers
 
@@ -1124,6 +1132,22 @@ _{ more test cases ... }_
 .. Prerequisites: The company that is searched for must exist
 .. Test Case: `find Burger` +
    Expected: May return `Burger Spot` and `Burger King` if both exist as companies
+   
+=== Finding a person by occupation
+
+. Finding a person by occupation
+
+.. Prerequisites: The person that is searched for must exist
+.. Test Case: `findOccupation Professor` +
+   Expected: May return `Alice` and `Bob` if both exist as persons whose occupation is professor
+   
+=== Finding a company by sector
+
+. Finding a company by sector
+
+.. Prerequisites: The company that is searched for must exist
+.. Test Case: `findSector Bank` +
+   Expected: May return `DSS` and `OCCC` if both exist as companies whose sector is bank
 
 === Deleting a company
 
