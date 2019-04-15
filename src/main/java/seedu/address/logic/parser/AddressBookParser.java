@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.AddCpnyCommand;
-import seedu.address.logic.commands.AverageCommand;
+import seedu.address.logic.commands.AverageSalaryCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CountCommand;
@@ -135,8 +135,8 @@ public class AddressBookParser {
         case CountCommand.COMMAND_WORD:
             return new CountCommand();
 
-        case AverageCommand.COMMAND_WORD:
-            return new AverageCommand();
+        case AverageSalaryCommand.COMMAND_WORD:
+            return new AverageSalaryCommand();
 
         case FindminCommand.COMMAND_WORD:
             return new FindminCommand();
