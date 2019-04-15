@@ -491,6 +491,18 @@ Shows median salary for all persons in the address book
 
 Format: `medianSalary`
 
+=== Show maximum salary for all clients: `findmax`
+
+Show maximum salary for all clients in the address book
+
+Format: `findmax`
+
+=== Show minimum salary for all clients: `findmin`
+
+Show minimum salary for all clients in the address book
+
+Format: `findmin`
+
 === Show average revenue for all companies: `averageRevenue`
 
 Shows average revenue for all companies in the address book
