@@ -22,7 +22,7 @@ Marketing Morph is a desktop marketing application. It has a GUI but most of the
 
 * *Minor enhancement*:
 ** Show the average and median salary for persons through command `averageSalary` and `medianSalary` respectively
-** show the average and median revenue for companies through command `averageRevenue` and `medianRevenue` respectively
+** Show the average and median revenue for companies through command `averageRevenue` and `medianRevenue` respectively
 ** Find persons with exact occupation through `findOccupation`
 ** Find companies with exact sector through `findSector`
 
