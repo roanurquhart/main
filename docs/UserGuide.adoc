@@ -59,7 +59,7 @@ Format: `help`
 === Adding a person : `add`
 
 Adds a person to the consumer list. +
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS s/SALARY o/OCCUPATION r/RELATIONSHIP [t/TAG]...`
 
 [TIP]
 A person can have any number of tags (including 0)
@@ -183,6 +183,34 @@ Returns `Burger Spot` and `Burger King`
 * `find Burger Taco Shoes` +
 Returns any person having names `Burger`, `Taco`, or `Shoes`
 // end::findcpny[]
+
+=== Locating persons by occupation : `findOccupation`
+
+****
+* The search is case insensitive. e.g `teacher` will match `Teacher`
+* Only the occupation is searched.
+* Only full words will be matched e.g. `Tea` will not match `Teacher`
+* Persons matching the occupation will be returned
+****
+
+Examples:
+
+* `findOccupation teacher` +
+Returns `Bob` and `Alice` (Their occupation is teacher)
+
+=== Locating companies by sector : `findSector`
+
+****
+* The search is case insensitive. e.g `bank` will match `Bank`
+* Only the sector is searched.
+* Only full words will be matched e.g. `Ban` will not match `Bank`
+* Companies matching the sector will be returned
+****
+
+Examples:
+
+* `findCompany bank` +
+Returns `OCCC` (Its sector is bank)
 
 === Deleting a person : `delete`
 
@@ -375,6 +403,9 @@ Examples:
 
 * `favorite John` (recommends all John's in the addressbook, adds none)
 
+image::multipleJohns.png[width="200"]
+
+
 === Delete person from favorite list: `delFav`
 
 Removes a person to the “favorite” list
@@ -395,9 +426,20 @@ Examples:
 
 === List the favorite list: `listFav`
 
-Lists all persons in the “favorite” list under the clients panel
+Lists all persons in the “favorite” list under the clients panel in alphabetical order
 
 Format: `listFav`
+
+Example:
+
+* `favorite John Doe` +
+`favorite Alex Yeoh` +
+`favorite Roy Balakrishnan` +
+`favorite David Li` +
+`listFav`
+
+image::listFav.png[width="400"]
+
 // end::favorite[]
 
 === Create group: `group` `[coming in v1.4]`
@@ -424,7 +466,37 @@ Examples:
 
 `export` all
 
+=== Show average salary for all persons: `averageSalary`
 
+Shows average salary for all persons in the address book
+
+Examples:
+
+Format: `averageSalary`
+
+=== Show median salary for all persons: `medianSalary`
+
+Shows median salary for all persons in the address book
+
+Examples:
+
+Format: `medianSalary`
+
+=== Show average revenue for all companies: `averageRevenue`
+
+Shows average revenue for all companies in the address book
+
+Examples:
+
+Format: `averageRevenue`
+
+=== Show median revenue for all revenue: `medianRevenue`
+
+Shows median revenue for all companies in the address book
+
+Examples:
+
+Format: `medianRevenue`
 
 
 
@@ -464,12 +536,20 @@ e.g. `editcpny 1 n/Burger King`
 e.g. `find James Jake`
 * *Find Company* `findcpny KEYWORD [MORE_KEYWORDS]` +
 e.g. `findcpny McDonalds`
+* *Find Occupation* `findOccupation KEYWORD` +
+e.g. `findOccupation professor`
+* *Find Sector* `findSector KEYWORD` +
+e.g. `findSector bank`
 * *List Persons* : `list`
 * *List Companies* : `listcpny`
 * *Help* : `help`
 * *Select* : `select INDEX` +
 e.g.`select 2`
 * *Add Favorite* : `favorite`
+* *Show Average  Salary* : `averageSalary`
+* *Show Median Salary* : `medianSalary`
+* *Show Average Revenue* : `averageRevenue`
+* *Show Median Revenue* : `medianRevenue`
 * *Delete Favorite* : `delFav`
 * *List Favorite* : `listFav`
 * *History* : `history`

@@ -328,13 +328,15 @@ image::UndoRedoActivityDiagram.png[width="650"]
 ==== Current Implementation
 
 The favorite system is facilitated by `AddressBook`,
-It extends the address book system by allowing the user to save favorites, stored internally as a `UniquePersonList`.
+it extends the address book system by allowing the user to save/delete/list favorites, stored internally as a `UniquePersonList`.
 Additionally, it implements the following operations:
 
 * `AddressBook#addFavorites()` -- Saves the person into the favorites list.
+* `AddressBook#removeFavorite()` -- Removes the person from the favorites list.
+* `AddressBook#hasFavorite()` -- Checks if the person exists in the favorites list.
 * `AddressBook#getFavoritesList()` -- Returns a list of all favorite persons.
 
-These operations are exposed in the `Model` interface as `Model#addFavorites()` and `Model#getFavoritesList()`.
+These operations are exposed in the `Model` interface as `Model#addFavorites()`, `Model#removeFavorite()`, `Model#hasFavorite()`, and `Model#getFavoritesList()`.
 
 Given below is an example usage scenario of how the favorite mechanism behaves at each step.
 
@@ -345,6 +347,10 @@ Step 2. The user executes `favorite Alex` to save the person Alex into their fav
 Step 3. The user repeats this a few times, adding a few other persons.
 
 Step 4. The user wants to view all favorites and executes `listFav` to view all favorites. This creates a new `PersonIsFavoritePredicate` which is passed in a model and calls `Model#getFavoritesList` and check if it contains the person. The command class then calls `Model#updateFilteredPersonList` with the predicate to only display all filtered (favorite) persons.
+
+Step 5. The user notices they accidentally added the wrong person (Alex for example) into the favorites list and executes `delFav Alex Yeoh` to remove them from the favorites list.
+
+The following is a sequence diagram describing the flow of how the favorite command works behind the scenes.
 
 image::favoriteActivityDiagram.png[width="650"]
 
@@ -360,7 +366,15 @@ Favorites are stored in addressbook.json as another entry into the existing dict
 * **Alternative 2:** Linked list to store favorites.
 ** Pros: Efficient to delete favorites from anywhere in the list.
 ** Cons: We must ensure that the implementation is proper as there is a lot of complexity.
-_
+
+===== Aspect: Method of marking favorites
+
+* **Alternative 1 (current choice):** Create another entry into the dictionary within addressbook.json to store favorites over multiple sessions.
+** Pros: Easy to implement, clean seperate commands/functions related to adding/deleting from favorites (doesn't affect addressbook contacts in any way).
+** Cons: A lot of data is repeated when storing favorites.
+* **Alternative 2:** Create an extra boolean attribute within each person to store favorite status.
+** Pros: More space effective.
+** Cons: We must ensure that the implementation is proper as we can accidentally affect the persons that are regular contacts, harder to visually inspect our json file to see who favorites are/aren't.
 
 // end::favoriteSystem[]
 
