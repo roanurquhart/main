@@ -41,7 +41,7 @@ https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/ad
 
 ** Documentation:
 *** Write a rudiment of the User Guide with some basic commands
-*** Add `sort command` and `export `export command` to User Guide
+*** Add `sort command` and `export command` to User Guide
 
 ** Community:
 *** Asked several questions in the forum
