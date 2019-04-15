@@ -1,4 +1,4 @@
-= Jitesh KKhiani - Project Portfolio
+= Jitesh Khiani - Project Portfolio
 :site-section: AboutUs
 :imagesDir: ../images
 :stylesDir: ../stylesheets
@@ -26,15 +26,20 @@ Personal code contributions available at https://nus-cs2103-ay1819s2.github.io/c
 ** Credits: Heavily relied on demo code from pull request https://github.com/se-edu/addressbook-level4/pull/798[#798]
 
 * *Code contributed* +
-https://github.com/CS2103-AY1819S2-W16-3/main/pull/8/[PR #8 adding colors to tags] +
-https://github.com/CS2103-AY1819S2-W16-3/main/pull/71/files[PR #71 adding clients to footer] +
-https://github.com/CS2103-AY1819S2-W16-3/main/pull/124/[PR #124 adding companies to footer]  +
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/DelFavoriteCommand.java[DelFavoriteCommand.java] +
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FavoriteCommand.java[FavoriteCommand.java] +
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ListFavoritesCommand.java[ListFavoritesCommand.java] +
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/FavoriteCommandParser.java[FavoriteCommandParser.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/pull/8/[PR #8 adding colors to tags], https://github.com/CS2103-AY1819S2-W16-3/main/pull/71/files[PR #71 add clients to footer],
+https://github.com/CS2103-AY1819S2-W16-3/main/pull/124/[PR #124 adding companies to footer],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/DelFavoriteCommand.java[DelFavoriteCommand.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FavoriteCommand.java[FavoriteCommand.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ListFavoritesCommand.java[ListFavoritesCommand.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/FavoriteCommandParser.java[FavoriteCommandParser.java],
 https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/DelFavoriteCommandParser.java[DelFavoriteCommandParser.java] +
 And associated code snippets within related files (such as modifying addressbookparser).
+
+* *Tests contributed* +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/seedu/address/logic/parser/FavoriteCommandParserTest.java[FavoriteCommandParserTest.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/seedu/address/logic/commands/FavoriteCommandTest.java[FavoriteCommandTest.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/systemtests/DeleteFavoriteSystemTest.java[DeleteFavoriteSystemTest.java],
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/systemtests/FavoriteCommandSystemTest.java[FavoriteCommandSystemTest.java]
 
 * *Other contributions*:
 
@@ -64,3 +69,5 @@ include::../UserGuide.adoc[tag=favorite]
 include::../DeveloperGuide.adoc[tag=favoriteSystem]
 
 include::../DeveloperGuide.adoc[tag=jiteshUseCase]
+
+include::../DeveloperGuide.adoc[tag=jiteshAppendix]
