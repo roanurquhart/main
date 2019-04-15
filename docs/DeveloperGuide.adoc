@@ -915,6 +915,10 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |user |sort persons by name |locate a person easily
 
+|`* * *` |user |sort persons by occupation |locate a cohort of persons easily
+
+|`* * *` |user |sort companies by sector |locate a cohort of companies easily
+
 |`* * *` |user |create a group of clients |to organize potential clients into a separate group
 
 |`* * *` |user |add contacts to a favorites list |to have quick access to the most used contacts
@@ -922,6 +926,10 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 |`* * *` |user |delete contacts to a favorites list |to have quick access to the most used contacts
 
 |`* * *` |user |update person or company data |to change information that is no longer correct
+
+|`* * *` |user |analyze salary for all persons |know the average and median salary for all persons
+
+|`* * *` |user |analyze revenue for all companies |know the average and median revenue for all companies
 
 |`* *` |user |can analyze which people can afford a product |to effectively target potential consumers
 
@@ -977,6 +985,42 @@ Use case resumes at step 2.
 2.  AddressBook shows a list of persons
 3.  User requests to add a specific person in the list to their favorites
 4.  AddressBook saves the person in the favorites list
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The list is empty.
++
+Use case ends.
+
+* 3a. The given name does not exist.
++
+[none]
+** 3a1. AddressBook shows an error message.
++
+* 3b. The given name is not specific enough.
++
+[none]
+** 3b1. AddressBook shows an error message and displays potential options.
++
+* 3c. The given name is already a favorite.
++
+[none]
+** 3c1. AddressBook shows an error message.
++
+Use case resumes at step 1.
+
+[discrete]
+=== Use case: Delete favorite person
+
+*MSS*
+
+1.  User requests to list favorites
+2.  AddressBook shows a list of favorites persons
+3.  User requests to delete a specific person in the favorites list
+4.  AddressBook deletes the person from the favorites list
 +
 Use case ends.
 
@@ -1056,14 +1100,11 @@ Cons:
 * ...
 
 [appendix]
+// tag::manualTesting[]
+
 == Instructions for Manual Testing
 
 Given below are instructions to test the app manually.
-
-Testing `Company`
-
-[NOTE]
-These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
 
 === Launch and Shutdown
 
@@ -1080,6 +1121,51 @@ These instructions only provide a starting point for testers to work on; testers
    Expected: The most recent window size and location is retained.
 
 _{ more test cases ... }_
+
+// tag::jiteshAppendix[]
+Testing `Favorite`
+
+[NOTE]
+These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
+
+=== Adding a favorite
+
+. Adding a favorite to the list
+
+.. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+.. Test case: `favorite Alex` +
+   Expected: Alex Yeoh not added to the favorites list. Status message requests more specificity, if there are multiple 'Alex' in our client list the cards will update to show them all.
+.. Test case: `favorite Alex Yeoh` +
+   Expected: Alex Yeoh added to the favorites list. Status message confirms addition. Timestamp in the status bar is updated.
+.. Test case: `favorite Alex Yeoh` +
+   Expected: Favorite is not added (since you just added them). Status message updated to reflect current standing. Status bar remains the same.
+.. Incorrect favorite commands to try: `favorite blah`, `favorite` both cases the person is not a client and therefore cannot be added +
+   Expected: Person does not exist.
+
+=== List all favorites
+
+. Listing all favorites within the application
+
+.. Prerequisites: None (will show an empty panel if there are no favorites)
+.. Test Case: `listFav`
+
+=== Deleting a favorite
+
+. Deleting a favorite while all companies are listed
+
+.. Prerequisites: List all persons using the `listFav` command.
+.. Test case: `delFav Alex` +
+   Expected: Alex Yeoh not removed from the favorites list. Status message requests more specificity.
+.. Test case: `delFav Alex Yeoh` +
+   Expected: Alex Yeoh removed from the favorites list. Status message confirms addition. Timestamp in the status bar is updated.
+.. Incorrect favorite commands to try: `delFav blah`, `delFav` both cases the person is not a client and therefore cannot be added +
+   Expected: Person does not exist.
+// end::jiteshAppendix[]
+
+Testing `Company`
+
+[NOTE]
+These instructions only provide a starting point for testers to work on; testers are expected to do more _exploratory_ testing.
 
 === Deleting a person
 
@@ -1124,6 +1210,22 @@ _{ more test cases ... }_
 .. Prerequisites: The company that is searched for must exist
 .. Test Case: `find Burger` +
    Expected: May return `Burger Spot` and `Burger King` if both exist as companies
+   
+=== Finding a person by occupation
+
+. Finding a person by occupation
+
+.. Prerequisites: The person that is searched for must exist
+.. Test Case: `findOccupation Professor` +
+   Expected: May return `Alice` and `Bob` if both exist as persons whose occupation is professor
+   
+=== Finding a company by sector
+
+. Finding a company by sector
+
+.. Prerequisites: The company that is searched for must exist
+.. Test Case: `findSector Bank` +
+   Expected: May return `DSS` and `OCCC` if both exist as companies whose sector is bank
 
 === Deleting a company
 
@@ -1132,4 +1234,4 @@ _{ more test cases ... }_
 .. Prerequisites: List all companies using the `listcpny` command.
 .. Test case: `delete 1` +
    Expected: First company is deleted from the list. Details of the deleted company shown in the status message.
-
+   // end::manualTesting[]

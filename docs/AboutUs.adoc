@@ -38,7 +38,7 @@ Responsibilities: UG/DG maintenance, GH Repo maintenance, Favorites System, Maps
 
 === Roan Urquhart
 image::roanurquhart.png[width="150", align="left"]
-{empty}[https://github.com/roanurquhart[github]] [<<johndoe#, portfolio>>]
+{empty}[https://github.com/roanurquhart[github]] [<<roanurquhart#, portfolio>>]
 
 Role: Developer
 Responsibilities: UG/DG maintenance, GH Repo maintenance, Company Implementation

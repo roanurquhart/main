@@ -184,6 +184,8 @@ Returns `Burger Spot` and `Burger King`
 Returns any person having names `Burger`, `Taco`, or `Shoes`
 // end::findcpny[]
 
+
+// tag::findOccupation[]
 === Locating persons by occupation : `findOccupation`
 
 ****
@@ -197,7 +199,9 @@ Examples:
 
 * `findOccupation teacher` +
 Returns `Bob` and `Alice` (Their occupation is teacher)
+// end::findOccupation[]
 
+// tag::findSector[]
 === Locating companies by sector : `findSector`
 
 ****
@@ -211,6 +215,7 @@ Examples:
 
 * `findCompany bank` +
 Returns `OCCC` (Its sector is bank)
+// end::findSector[]
 
 === Deleting a person : `delete`
 
@@ -451,7 +456,7 @@ Example:
 `favorite David Li` +
 `listFav`
 
-image::listFav.png[width="400"]
+image::listFav.png[width="200"]
 
 // end::favorite[]
 
@@ -478,18 +483,21 @@ Examples:
 `export` /Users/fandongzhe/Desktop/fg market (type in the whole filepath)
 
 
-
+// tag::averageSalary[]
 === Show average salary for all persons: `averageSalary`
 
 Shows average salary for all persons in the address book
 
 Format: `averageSalary`
+// end::averageSalary[]
 
+// tag::medianSalary[]
 === Show median salary for all persons: `medianSalary`
 
 Shows median salary for all persons in the address book
 
 Format: `medianSalary`
+// end::medianSalary[]
 
 === Show maximum salary for all clients: `findmax`
 
@@ -503,19 +511,21 @@ Show minimum salary for all clients in the address book
 
 Format: `findmin`
 
+// tag::averageRevenue[]
 === Show average revenue for all companies: `averageRevenue`
 
 Shows average revenue for all companies in the address book
 
 Format: `averageRevenue`
+// end::averageRevenue[]
 
+// tag::medianRevenue[]
 === Show median revenue for all revenue: `medianRevenue`
 
 Shows median revenue for all companies in the address book
 
 Format: `medianRevenue`
-
-
+// end::medianRevenue[]
 
 === Saving the data
 
