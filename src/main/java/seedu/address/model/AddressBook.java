@@ -239,9 +239,14 @@ public class AddressBook implements ReadOnlyAddressBook {
         return persons.hashCode();
     }
 
-    public void sortPersons(Comparator<Person> comPer , String sequence)
-    {
-        persons.SortList(comPer,sequence);
+    public void sortPersons(Comparator<Person> comPer , String sequence) {
+        persons.SortList(comPer, sequence);
     }
+
+    public void sortCompanies(Comparator<Company> comCom , String sequence) {
+        companies.SortList(comCom, sequence);
+    }
+
+
 
 }

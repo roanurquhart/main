@@ -12,7 +12,7 @@ import java.util.Comparator;
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.person.Person;
 
-public class SortPersonCommand extends Command{
+public class SortPersonCommand extends Command {
 
     public final Comparator<Person> Compare;
     public final String Compare_parameter;
@@ -24,21 +24,22 @@ public class SortPersonCommand extends Command{
                                                             + "Example: sortper salary seq(for sequence order)\n"
                                                             + "Example: sortper salary rev(for reverse order)";
 
-    public static final String MESSAGE_SUCCESS ="People have been sorted! ";
+    public static final String MESSAGE_SUCCESS = "People have been sorted! ";
 
 
-    public SortPersonCommand(Comparator<Person> com_function, String Com_para, String Seq)
-    {
-        this.Compare=com_function;
-        this.Compare_parameter=Com_para;
-        this.Sequence=Seq;
+    public SortPersonCommand(Comparator<Person> com_function, String Com_para, String Seq) {
+        this.Compare = com_function;
+        this.Compare_parameter = Com_para;
+        this.Sequence = Seq;
     }
 
     @Override
-    public  CommandResult execute(Model model,CommandHistory history) throws CommandException
-    {
+    public  CommandResult execute(Model model,CommandHistory history) throws CommandException {
         model.sortPerson(this.Compare, this.Sequence);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
+        if(!this.Sequence.equals("seq") || this.Sequence.equals("rev")) {
+            throw new CommandException("error");
+        }
         return new CommandResult(MESSAGE_SUCCESS);
     }
 
