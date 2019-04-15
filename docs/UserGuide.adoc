@@ -456,7 +456,7 @@ Example:
 `favorite David Li` +
 `listFav`
 
-image::listFav.png[width="400"]
+image::listFav.png[width="200"]
 
 // end::favorite[]
 
