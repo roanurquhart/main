@@ -309,6 +309,17 @@ public class AddCommandTest {
         public void sortPerson(Comparator comPerson, String sequence) {
             throw new AssertionError("This method should not be called.");
         }
+
+        /**
+         * Sort company by specific parameter.
+         *
+         * @param comCompany
+         * @param sequence
+         */
+        @Override
+        public void sortCompany(Comparator comCompany, String sequence) {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     /**
