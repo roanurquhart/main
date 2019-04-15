@@ -375,7 +375,7 @@ Examples:
 `sortcpny` phone rev            (list all companies by their phone number in reverse order)
 
 
-=== Find clients: `findCli` `[coming in v1.4]`
+=== Find clients: `findCli` `[coming in v2.0]`
 
 Lists all persons deemed capable of affording a specific product based on salary
 
@@ -388,7 +388,7 @@ findCli 100
 findCli 20
 
 
-=== Find shops: `findShops` `[coming in v1.4]`
+=== Find shops: `findShops` `[coming in v2.0]`
 
 
 Lists all stores a person is deemed capable of visiting based on salary and store pricing
@@ -460,7 +460,7 @@ image::listFav.png[width="200"]
 
 // end::favorite[]
 
-=== Create group: `group` `[coming in v1.4]`
+=== Create group: `group` `[coming in v2.0]`
 
 Creates a group of persons
 
