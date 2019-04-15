@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.AddCpnyCommand;
+
+import seedu.address.logic.commands.AverageRevenueCommand;
 import seedu.address.logic.commands.AverageSalaryCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.Command;
@@ -23,8 +25,12 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.FindCpnyCommand;
 import seedu.address.logic.commands.FindminCommand;
 import seedu.address.logic.commands.FindmaxCommand;
+import seedu.address.logic.commands.FindOccupationCommand;
+import seedu.address.logic.commands.FindSectorCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.HistoryCommand;
+import seedu.address.logic.commands.MedianSalaryCommand;
+import seedu.address.logic.commands.MedianRevenueCommand;
 import seedu.address.logic.commands.ListCpnyCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.ListFavoritesCommand;
@@ -134,15 +140,30 @@ public class AddressBookParser {
 
         case CountCommand.COMMAND_WORD:
             return new CountCommand();
-
+                
         case AverageSalaryCommand.COMMAND_WORD:
             return new AverageSalaryCommand();
+
+        case AverageRevenueCommand.COMMAND_WORD:
+            return new AverageRevenueCommand();
+
+        case MedianSalaryCommand.COMMAND_WORD:
+            return new MedianSalaryCommand();
+
+        case MedianRevenueCommand.COMMAND_WORD:
+            return new MedianRevenueCommand();
 
         case FindminCommand.COMMAND_WORD:
             return new FindminCommand();
 
         case FindmaxCommand.COMMAND_WORD:
             return new FindmaxCommand();
+                
+        case FindOccupationCommand.COMMAND_WORD:
+            return new FindOccupationCommandParser().parse(arguments);
+
+        case FindSectorCommand.COMMAND_WORD:
+            return new FindSectorCommandParser().parse(arguments);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
