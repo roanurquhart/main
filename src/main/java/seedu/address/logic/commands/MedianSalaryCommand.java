@@ -3,6 +3,7 @@ package seedu.address.logic.commands;
 import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 
+
 import static java.util.Objects.requireNonNull;
 
 public class MedianSalaryCommand extends Command{
