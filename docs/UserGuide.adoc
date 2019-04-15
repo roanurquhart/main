@@ -483,15 +483,11 @@ Examples:
 
 Shows average salary for all persons in the address book
 
-Examples:
-
 Format: `averageSalary`
 
 === Show median salary for all persons: `medianSalary`
 
 Shows median salary for all persons in the address book
-
-Examples:
 
 Format: `medianSalary`
 
@@ -499,15 +495,11 @@ Format: `medianSalary`
 
 Shows average revenue for all companies in the address book
 
-Examples:
-
 Format: `averageRevenue`
 
 === Show median revenue for all revenue: `medianRevenue`
 
 Shows median revenue for all companies in the address book
-
-Examples:
 
 Format: `medianRevenue`
 

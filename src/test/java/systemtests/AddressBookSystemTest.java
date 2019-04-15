@@ -177,6 +177,13 @@ public abstract class AddressBookSystemTest {
         assertListMatching(getPersonListPanel(), expectedModel.getFilteredPersonList());
     }
 
+    protected void assertApplicationDisplaysAsExpected(String expectedCommandInput, String expectedResultMessage,
+                                                     Model expectedModel) {
+        assertEquals(expectedResultMessage, getResultDisplay().getText());
+        assertEquals(new AddressBook(expectedModel.getAddressBook()), testApp.readStorageAddressBook());
+    }
+
+
     /**
      * Calls {@code BrowserPanelHandle}, {@code PersonListPanelHandle} and {@code StatusBarFooterHandle} to remember
      * their current state.
