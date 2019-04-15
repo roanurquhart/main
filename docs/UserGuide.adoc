@@ -344,7 +344,7 @@ Format: `clear`
 Exits the program. +
 Format: `exit`
 
-=== Sorting persons by name/salary/occupation/residential area/group : `sort`
+=== Sorting persons by name/salary/occupation/residential area/group : `sortper`
 
 Lists all people that meet the specified filter requirement(in sequence/reverse order).
 
@@ -355,6 +355,19 @@ Examples:
 `sortper` salary seq     (list all persons by salary in sequence order)
 
 `sortper` phone rev            (list all persons by their phone number in reverse order)
+
+
+=== Sorting companies by name/revenue/occupation/residential area/group : `sortcpny`
+
+Lists all companies that meet the specified filter requirement(in sequence/reverse order).
+
+Format: sortper name/revenue/phone/email/occupation/address/relationship seq/rev
+
+Examples:
+
+`sortcpny` revenue seq     (list all companies by revenue in sequence order)
+
+`sortcpny` phone rev            (list all companies by their phone number in reverse order)
 
 
 === Find clients: `findCli` `[coming in v1.4]`
@@ -458,13 +471,13 @@ Examples:
 
 Exports the data to a CSV file
 
-Format: `export` [CLIENTS] [CONSUMERS] [ALL]
+Format: `export` [FILEPATH] [FILENAME] 
 
 Examples:
 
-`export` clients
+`export` /Users/fandongzhe/Desktop/fg market (type in the whole filepath)
 
-`export` all
+
 
 === Show average salary for all persons: `averageSalary`
 
