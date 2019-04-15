@@ -69,5 +69,5 @@ include::../UserGuide.adoc[tag=findSector]
 
 include::../DeveloperGuide.adoc[tag=users]
 
-include::../DeveloerGuide.adoc[tag=manualTesting]
+include::../DeveloperGuide.adoc[tag=manualTesting]
 
