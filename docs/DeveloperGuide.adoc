@@ -1234,4 +1234,23 @@ _{ more test cases ... }_
 .. Prerequisites: List all companies using the `listcpny` command.
 .. Test case: `delete 1` +
    Expected: First company is deleted from the list. Details of the deleted company shown in the status message.
+   
+   
+Testing `Sort Person`
+
+=== Sort Person
+
+. Sort clients by some attributes
+
+.. Prerequisites: Must exist a list of clients and each of them has the attribute to be sorted.
+.. Test case: `sortper name seq`
+   Expected: Sort the list of clients by their name in sequence order.
+.. Test case: `sortper salary seq`
+   Expected: Sort the list of clients by their salary in reverse order.
+.. Test case: `sortper name rev`
+   Expected: Sort the list of clients by their name in sequence order.
+.. Test case: `sortper salary rev`
+   Expected: Sort the list of clients by their salary in reverse order.   
    // end::manualTesting[]
+   
+   
