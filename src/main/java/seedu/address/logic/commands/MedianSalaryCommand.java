@@ -5,9 +5,9 @@ import seedu.address.model.Model;
 
 import static java.util.Objects.requireNonNull;
 
-public class MedianCommand extends Command{
+public class MedianSalaryCommand extends Command{
 
-    public static final String COMMAND_WORD = "mean";
+    public static final String COMMAND_WORD = "medianSalary";
 
     public static final String MESSAGE_SUCCESS = "Showed the mean salary of all persons: %.2f";
 

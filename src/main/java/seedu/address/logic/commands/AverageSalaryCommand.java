@@ -7,9 +7,9 @@ import seedu.address.model.Model;
 /**
  * Calculates the average of all salaries
  */
-public class AverageCommand extends Command {
+public class AverageSalaryCommand extends Command {
 
-    public static final String COMMAND_WORD = "average";
+    public static final String COMMAND_WORD = "averageSalary";
 
     public static final String MESSAGE_SUCCESS = "Showed the average salary of all persons: %.2f";
 
