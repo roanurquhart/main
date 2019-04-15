@@ -555,6 +555,8 @@ e.g. `findOccupation professor`
 e.g. `findSector bank`
 * *List Persons* : `list`
 * *List Companies* : `listcpny`
+* *Sort Persons* : `sortper`
+* *Sort Companies* : `sortcpny`
 * *Help* : `help`
 * *Select* : `select INDEX` +
 e.g.`select 2`
