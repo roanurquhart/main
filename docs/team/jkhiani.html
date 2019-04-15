@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<title>Jitesh KKhiani - Project Portfolio</title>
+<title>Jitesh Khiani - Project Portfolio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -420,7 +420,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Jitesh KKhiani - Project Portfolio</h1>
+<h1>Jitesh Khiani - Project Portfolio</h1>
 </div>
 <div id="content">
 <div class="sect1">
@@ -479,15 +479,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><strong>Code contributed</strong><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/8/">PR #8 adding colors to tags</a><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/71/files">PR #71 adding clients to footer</a><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/124/">PR #124 adding companies to footer</a> <br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/DelFavoriteCommand.java">DelFavoriteCommand.java</a><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FavoriteCommand.java">FavoriteCommand.java</a><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ListFavoritesCommand.java">ListFavoritesCommand.java</a><br>
-<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/FavoriteCommandParser.java">FavoriteCommandParser.java</a><br>
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/8/">PR #8 adding colors to tags</a>, <a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/71/files">PR #71 add clients to footer</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/pull/124/">PR #124 adding companies to footer</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/DelFavoriteCommand.java">DelFavoriteCommand.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FavoriteCommand.java">FavoriteCommand.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ListFavoritesCommand.java">ListFavoritesCommand.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/FavoriteCommandParser.java">FavoriteCommandParser.java</a>,
 <a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/DelFavoriteCommandParser.java">DelFavoriteCommandParser.java</a><br>
 And associated code snippets within related files (such as modifying addressbookparser).</p>
+</li>
+<li>
+<p><strong>Tests contributed</strong><br>
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/seedu/address/logic/parser/FavoriteCommandParserTest.java">FavoriteCommandParserTest.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/seedu/address/logic/commands/FavoriteCommandTest.java">FavoriteCommandTest.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/systemtests/DeleteFavoriteSystemTest.java">DeleteFavoriteSystemTest.java</a>,
+<a href="https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/test/java/systemtests/FavoriteCommandSystemTest.java">FavoriteCommandSystemTest.java</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -651,7 +657,7 @@ And associated code snippets within related files (such as modifying addressbook
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/listFav.png" alt="listFav" width="400">
+<img src="../images/listFav.png" alt="listFav" width="200">
 </div>
 </div>
 </div>
@@ -850,6 +856,75 @@ Additionally, it implements the following operations:</p>
 </div>
 </li>
 <li>
+<p>3c. The given name is already a favorite.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_use_case_delete_favorite_person" class="discrete">Use case: Delete favorite person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list favorites</p>
+</li>
+<li>
+<p>AddressBook shows a list of favorites persons</p>
+</li>
+<li>
+<p>User requests to delete a specific person in the favorites list</p>
+</li>
+<li>
+<p>AddressBook deletes the person from the favorites list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given name does not exist.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. The given name is not specific enough.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. AddressBook shows an error message and displays potential options.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>3c. The given name isn&#8217;t a favorite.</p>
 <div class="ulist none">
 <ul class="none">
@@ -887,7 +962,104 @@ Additionally, it implements the following operations:</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Testing <code>Favorite</code></p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_a_favorite">Adding a favorite</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a favorite to the list</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+</li>
+<li>
+<p>Test case: <code>favorite Alex</code><br>
+Expected: Alex Yeoh not added to the favorites list. Status message requests more specificity, if there are multiple 'Alex' in our client list the cards will update to show them all.</p>
+</li>
+<li>
+<p>Test case: <code>favorite Alex Yeoh</code><br>
+Expected: Alex Yeoh added to the favorites list. Status message confirms addition. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>favorite Alex Yeoh</code><br>
+Expected: Favorite is not added (since you just added them). Status message updated to reflect current standing. Status bar remains the same.</p>
+</li>
+<li>
+<p>Incorrect favorite commands to try: <code>favorite blah</code>, <code>favorite</code> both cases the person is not a client and therefore cannot be added<br>
+Expected: Person does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_all_favorites">List all favorites</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all favorites within the application</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None (will show an empty panel if there are no favorites)</p>
+</li>
+<li>
+<p>Test Case: <code>listFav</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deleting_a_favorite">Deleting a favorite</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a favorite while all companies are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>listFav</code> command.</p>
+</li>
+<li>
+<p>Test case: <code>delFav Alex</code><br>
+Expected: Alex Yeoh not removed from the favorites list. Status message requests more specificity.</p>
+</li>
+<li>
+<p>Test case: <code>delFav Alex Yeoh</code><br>
+Expected: Alex Yeoh removed from the favorites list. Status message confirms addition. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Incorrect favorite commands to try: <code>delFav blah</code>, <code>delFav</code> both cases the person is not a client and therefore cannot be added<br>
+Expected: Person does not exist.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -895,7 +1067,7 @@ Additionally, it implements the following operations:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-14 00:08:58 +08
+Last updated 2019-04-15 17:05:38 +08
 </div>
 </div>
 </body>

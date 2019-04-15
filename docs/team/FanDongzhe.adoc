@@ -72,4 +72,6 @@ include::../UserGuide.adoc[tag=findmin]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/docs/DeveloperGuide.adoc[tag=Sort Person]
+
 

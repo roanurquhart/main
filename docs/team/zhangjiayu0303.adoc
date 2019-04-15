@@ -21,10 +21,10 @@ Marketing Morph is a desktop marketing application. It has a GUI but most of the
 ** Credits: The prexisting code base was very useful for guiding my implementation of the three additional person's attributes. It is very clear and comprehensive so I would like to thank the original contributers to this AB4. There is no other outside library applied.
 
 * *Minor enhancement*:
-** show the average and median salary for persons through command `averageSalary` and `medianSalary` respectively
-** show the average and median revenue for companies through command `averageRevenue` and `medianRevenue` respectively
-** find persons with exact occupation through `findOccupation`
-** find companies with exact sector through `findSector`
+** Show the average and median salary for persons through command `averageSalary` and `medianSalary` respectively
+** Show the average and median revenue for companies through command `averageRevenue` and `medianRevenue` respectively
+** Find persons with exact occupation through `findOccupation`
+** Find companies with exact sector through `findSector`
 
 * *Code contributed*: https://nus-cs2103-ay1819s2.github.io/cs2103-dashboard/#search=zhangjiayu0303
 
@@ -69,5 +69,5 @@ include::../UserGuide.adoc[tag=findSector]
 
 include::../DeveloperGuide.adoc[tag=users]
 
-include::../DeveloerGuide.adoc[tag=manualTesting]
+include::../DeveloperGuide.adoc[tag=manualTesting]
 
