@@ -22,22 +22,14 @@ Marketing Morph is a desktop application for marketers who want to organize cons
 * *Minor enhancement*: Get the max/min salary of all the clients
 
 * *Code contributed* +
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/SortPersonCommand.java[SortPersonCommand.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/PersonComparator.java[PersonComparator.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/SortPersonCommandParser.java[SortPersonCommandComparator.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/SortCompanyCommand.java[SortCompanyComparator.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/CompanyComparator.java[CompanyComparator.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/SortCompanyCommandParser.java[SortCompanyCommandComparator.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ExportCommand.java[ExportCommand.java]
-
-https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FindmaxCommand.java[FindmaxCommand.java]
-
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/SortPersonCommand.java[SortPersonCommand.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/PersonComparator.java[PersonComparator.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/SortPersonCommandParser.java[SortPersonCommandComparator.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/SortCompanyCommand.java[SortCompanyComparator.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/CompanyComparator.java[CompanyComparator.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/parser/SortCompanyCommandParser.java[SortCompanyCommandComparator.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/ExportCommand.java[ExportCommand.java] +
+https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FindmaxCommand.java[FindmaxCommand.java] +
 https://github.com/CS2103-AY1819S2-W16-3/main/blob/master/src/main/java/seedu/address/logic/commands/FindminCommand.java[FindminCommand.java]
 
 
